@@ -8,10 +8,12 @@
 
 protocol Comparato {
     
-    func pricePerWeight() -> Float
+    func pricePerWeight(weightA: Float, weightB: Float) -> Float
 }
 
-
+extension Comparato {
+    
+}
 
 
 /*
