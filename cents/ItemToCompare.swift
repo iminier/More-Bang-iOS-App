@@ -63,8 +63,8 @@ enum WeightTypes {
         }
         
     }
-
-    func convToQuarts(itemToConvert: ItemToCompare) -> ItemToCompare {
+    
+    func convToQuart(itemToConvert: ItemToCompare) -> ItemToCompare {
         let galDiv: Float = 0.25
         let litDiv: Float = 0.946353
         let pinDiv: Float = 4
@@ -243,5 +243,107 @@ enum WeightTypes {
         }
     }
     
+    func convToPound(itemToConvert: ItemToCompare) -> ItemToCompare {
+        let pndDiv: Float = 16
+        let grmDiv: Float = 453.592
+        let mgDiv: Float = 453592
+        
+        var convertedItem: ItemToCompare = itemToConvert
+        
+        switch itemToConvert.weightType {
+        case .pound:
+            convertedItem.weight = itemToConvert.weight / pndDiv
+            convertedItem.weightType = .pound
+            return convertedItem
+        case .gram:
+            convertedItem.weight = itemToConvert.weight / grmDiv
+            convertedItem.weightType = .pound
+            return convertedItem
+        case .milligram:
+            convertedItem.weight = itemToConvert.weight / mgDiv
+            convertedItem.weightType = .pound
+            return convertedItem
+        default:
+            return itemToConvert
+        }
+    }
+    
+    func convToOunce(itemToConvert: ItemToCompare) -> ItemToCompare {
+        let pndDiv: Float = 0.0625
+        let grmDiv: Float = 28.3495
+        let mgDiv: Float = 28349.5
+        
+        var convertedItem: ItemToCompare = itemToConvert
+        
+        switch itemToConvert.weightType {
+        case .pound:
+            convertedItem.weight = itemToConvert.weight / pndDiv
+            convertedItem.weightType = .ounce
+            return convertedItem
+        case .gram:
+            convertedItem.weight = itemToConvert.weight / grmDiv
+            convertedItem.weightType = .ounce
+            return convertedItem
+        case .milligram:
+            convertedItem.weight = itemToConvert.weight / mgDiv
+            convertedItem.weightType = .ounce
+            return convertedItem
+        default:
+            return itemToConvert
+        }
+    }
+    
+    func convToGram(itemToConvert: ItemToCompare) -> ItemToCompare {
+        let pndDiv: Float = 0.00220462
+        let ozDiv: Float = 0.035274
+        let mgDiv: Float = 1000
+        
+        var convertedItem: ItemToCompare = itemToConvert
+        
+        switch itemToConvert.weightType {
+        case .pound:
+            convertedItem.weight = itemToConvert.weight / pndDiv
+            convertedItem.weightType = .gram
+            return convertedItem
+        case .ounce:
+            convertedItem.weight = itemToConvert.weight / ozDiv
+            convertedItem.weightType = .gram
+            return convertedItem
+        case .milligram:
+            convertedItem.weight = itemToConvert.weight / mgDiv
+            convertedItem.weightType = .gram
+            return convertedItem
+        default:
+            return itemToConvert
+        }
+    }
+    
+    func convToMilligram(itemToConvert: ItemToCompare) -> ItemToCompare {
+        let pndDiv: Float = 2.2046E-6
+        let ozDiv: Float = 3.5274e-5
+        let grmDiv: Float = 0.001
+        
+        var convertedItem: ItemToCompare = itemToConvert
+        
+        switch itemToConvert.weightType {
+        case .pound:
+            convertedItem.weight = itemToConvert.weight / pndDiv
+            convertedItem.weightType = .milligram
+            return convertedItem
+        case .ounce:
+            convertedItem.weight = itemToConvert.weight / ozDiv
+            convertedItem.weightType = .milligram
+            return convertedItem
+        case .gram:
+            convertedItem.weight = itemToConvert.weight / grmDiv
+            convertedItem.weightType = .milligram
+            return convertedItem
+        default:
+            return itemToConvert
+        }
+    }
+    
 }
+
+
 
