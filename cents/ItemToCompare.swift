@@ -16,17 +16,17 @@ struct ItemToCompare: SplitSelf {
 
 enum WeightTypes {
     
-    case gallon // 4 quarts, 3.78541 Liters, 8 pints, 128 fluid ounces, 3785.41 Milliliter
-    case quart // 0.25 gallon, 0.946353 Liters, 4 pints, 64 fluid ounces, 946.353 Milliliter
-    case liter // 0.264172 gallon, 1.05669 quart, 2.11338 pint, 33.814 fluid ounce, 1000 Milliliter
-    case pint // 0.125 gallon, 0.25 quart, 0.473176 Liter, 16 fluid ounces, 473.176 Milliliter
-    case floz // 0.0634013 gallon, 0.03125 quart, 0.0295735 liter, 0.0625 pint, 29.5735 Milliliter
-    case milliliter // 0.000264172 gallon, 0.00105699 quart, 0.001 liter, 0.00211338 pint, 0.033814
+    case gallon
+    case quart
+    case liter
+    case pint
+    case floz
+    case milliliter
     
-    case pound // 0.000453592 ton, 16 oz, 453.592 gram, 453592 milligram
-    case ounce // 0 ton, 0.0625 pound, 28.3495 grams, 28349.5 milligram
-    case gram // 0 ton, 0.00220462 pound, 0.035274 ounce, 1000 milligram
-    case milligram // 0 ton, 0 pound, 0 ounce, 0.001 gram
+    case pound
+    case ounce
+    case gram
+    case milligram
     
     func convToGallon(itemToConvert: ItemToCompare) -> ItemToCompare {
         let qrtDiv: Float = 4

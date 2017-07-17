@@ -6,6 +6,12 @@
 //  Copyright © 2017 Ivan Minier. All rights reserved.
 //
 
-import Foundation
+import XCTest
 
-// testing the commit of this new file to the project online after the break.
+class ComparatoTests: XCTestCase {
+    
+    override func setup() {
+        
+    }
+    
+}
