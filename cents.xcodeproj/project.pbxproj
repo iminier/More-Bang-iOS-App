@@ -11,7 +11,7 @@
 		D9075BBF1F18547C00889026 /* ItemSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9075BBE1F18547C00889026 /* ItemSummary.swift */; };
 		D9075BC11F1854A000889026 /* ItemToCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9075BC01F1854A000889026 /* ItemToCompare.swift */; };
 		D909CC341F1D5D03001F9083 /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909CC331F1D5D03001F9083 /* ProjectTests.swift */; };
-		D9B5E8951F195C6100FCD080 /* ComparatoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B5E8941F195C6100FCD080 /* ComparatoTests.swift */; };
+		D919E5A51F1D5EFD00E127AD /* ComparatoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B5E8941F195C6100FCD080 /* ComparatoTests.swift */; };
 		D9D632771F1579E2009D150B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D632761F1579E2009D150B /* AppDelegate.swift */; };
 		D9D6327E1F1579E2009D150B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9D6327D1F1579E2009D150B /* Assets.xcassets */; };
 		D9D632811F1579E2009D150B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D6327F1F1579E2009D150B /* LaunchScreen.storyboard */; };
@@ -215,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D919E5A51F1D5EFD00E127AD /* ComparatoTests.swift in Sources */,
 				D909CC341F1D5D03001F9083 /* ProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,7 +226,6 @@
 			files = (
 				D9D6328D1F159627009D150B /* Item.swift in Sources */,
 				D9D6328B1F159458009D150B /* Comparato.swift in Sources */,
-				D9B5E8951F195C6100FCD080 /* ComparatoTests.swift in Sources */,
 				D9D632891F157AE0009D150B /* MainVC.swift in Sources */,
 				D9D632771F1579E2009D150B /* AppDelegate.swift in Sources */,
 				D9075BBD1F18544100889026 /* SplitSelf.swift in Sources */,
@@ -413,6 +413,7 @@
 				D909CC3A1F1D5D03001F9083 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9D6326E1F1579E2009D150B /* Build configuration list for PBXProject "cents" */ = {
 			isa = XCConfigurationList;

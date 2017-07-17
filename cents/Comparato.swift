@@ -35,7 +35,7 @@ extension Comparato {
             secondItem = itemB.weightType.convToFloz(itemToConvert: itemB)
             return secondItem
         case commonItem.weightType == .milliliter:
-            secondItem = itemB.weightType.convToGallon(itemToConvert: itemB)
+            secondItem = itemB.weightType.convToMilliliter(itemToConvert: itemB)
             return secondItem
         case commonItem.weightType == .pound:
             secondItem = itemB.weightType.convToPound(itemToConvert: itemB)
