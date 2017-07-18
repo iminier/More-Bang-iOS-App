@@ -203,7 +203,7 @@ enum WeightTypes {
             convertedItem.weightType = .floz
             return convertedItem
         default:
-            return itemToConvert
+            return convertedItem
         }
         
     }
@@ -244,15 +244,15 @@ enum WeightTypes {
     }
     
     func convToPound(itemToConvert: ItemToCompare) -> ItemToCompare {
-        let pndDiv: Float = 16
+        let ozDiv: Float = 16
         let grmDiv: Float = 453.592
         let mgDiv: Float = 453592
         
         var convertedItem: ItemToCompare = itemToConvert
         
         switch itemToConvert.weightType {
-        case .pound:
-            convertedItem.weight = itemToConvert.weight / pndDiv
+        case .ounce:
+            convertedItem.weight = itemToConvert.weight / ozDiv
             convertedItem.weightType = .pound
             return convertedItem
         case .gram:

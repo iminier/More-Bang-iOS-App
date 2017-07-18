@@ -50,7 +50,8 @@ extension Comparato {
             secondItem = itemB.weightType.convToMilligram(itemToConvert: itemB)
             return secondItem
         default:
-            return itemB
+            secondItem = itemB
+            return secondItem
         }
         
     }
