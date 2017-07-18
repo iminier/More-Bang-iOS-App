@@ -65,7 +65,7 @@ class ComparatoTests: XCTestCase, Comparato {
         firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gallon)
         secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gallon)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
-        XCTAssertNotEqual(secondItem.weightType, result.weightType)
+        XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     //
@@ -111,7 +111,7 @@ class ComparatoTests: XCTestCase, Comparato {
         firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .quart)
         secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .quart)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
-        XCTAssertNotEqual(secondItem.weightType, result.weightType)
+        XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     //
@@ -157,7 +157,7 @@ class ComparatoTests: XCTestCase, Comparato {
         firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .liter)
         secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .liter)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
-        XCTAssertNotEqual(secondItem.weightType, result.weightType)
+        XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     //
@@ -203,7 +203,7 @@ class ComparatoTests: XCTestCase, Comparato {
         firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pint)
         secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pint)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
-        XCTAssertNotEqual(secondItem.weightType, result.weightType)
+        XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     //
@@ -249,7 +249,7 @@ class ComparatoTests: XCTestCase, Comparato {
         firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .floz)
         secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .floz)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
-        XCTAssertEqual(secondItem.weightType, result.weightType)
+        XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     //
@@ -295,7 +295,7 @@ class ComparatoTests: XCTestCase, Comparato {
         firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milliliter)
         secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milliliter)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
-        XCTAssertEqual(secondItem.weightType, result.weightType)
+        XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     //
@@ -327,7 +327,7 @@ class ComparatoTests: XCTestCase, Comparato {
         firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pound)
         secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pound)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
-        XCTAssertEqual(secondItem.weightType, result.weightType)
+        XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     //
@@ -359,7 +359,7 @@ class ComparatoTests: XCTestCase, Comparato {
         firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .ounce)
         secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .ounce)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
-        XCTAssertEqual(secondItem.weightType, result.weightType)
+        XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     //
@@ -391,7 +391,7 @@ class ComparatoTests: XCTestCase, Comparato {
         firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gram)
         secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gram)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
-        XCTAssertEqual(secondItem.weightType, result.weightType)
+        XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     //
@@ -423,7 +423,75 @@ class ComparatoTests: XCTestCase, Comparato {
         firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milligram)
         secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milligram)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
-        XCTAssertEqual(secondItem.weightType, result.weightType)
+        XCTAssertEqual(firstItem.weightType, result.weightType)
+    }
+    
+    //
+    // Test compareItems()
+    //
+    
+    func testReturnsItemSummary() {
+        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .ounce)
+        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .ounce)
+        let result = compareItems(itemA: firstItem, itemB: secondItem)
+        XCTAssertTrue(result is ItemSummary)
+    }
+    
+    func testReturnsSecondItemAsBetterBuy() {
+        firstItem = ItemToCompare(price: 2.48, weight: 9.0, weightType: .ounce)
+        secondItem = ItemToCompare(price: 3.48, weight: 18.00, weightType: .ounce)
+        let result = compareItems(itemA: firstItem, itemB: secondItem)
+        XCTAssertEqual(result.betterBuy.price, secondItem.price)
+    }
+    
+    func testReturnsFirstItemAsBetterBuy() {
+        firstItem = ItemToCompare(price: 3.48, weight: 18.00, weightType: .ounce)
+        secondItem = ItemToCompare(price: 2.48, weight: 9.0, weightType: .ounce)
+        let result = compareItems(itemA: firstItem, itemB: secondItem)
+        XCTAssertEqual(result.betterBuy.price, firstItem.price)
+    }
+    
+    func testConvertAndReturnFirstItemBetterBuy() {
+        firstItem = ItemToCompare(price: 2.48, weight: 9.0, weightType: .ounce)
+        secondItem = ItemToCompare(price: 5.00, weight: 1.0, weightType: .pound)
+        let result = compareItems(itemA: firstItem, itemB: secondItem)
+        XCTAssertEqual(result.betterBuy.price, firstItem.price)
     }
     
 }
+
+
+/* 
+ Cereal
+ 9 oz 2.48 vs 18 oz 3.48 vs 24 oz 4.24
+ 
+ Nuts
+ 8 oz 3.98 vs 15 oz 7.48
+ 
+ Raisins
+ 9 oz 2.98 vs 12 oz 3.88
+ 
+ 
+ Milk
+ 64 fl oz 2.98 vs 96 fl oz 4.98
+ 
+ Wine
+ 750 ml 19.98 vs 1 liter 25.48
+ 
+ Shampoo
+ 24 fl oz 2.98 vs 1 liter (33.8 oz) 4.68
+ 
+ Body Wash
+ 22 fl oz 4.48 vs 26 fl oz 5.98
+ 
+ You can also add a comparison for quantity of items.
+ 
+ 24 items vs 32 items
+ 3.98 vs 5.24
+ 
+ 6 eggs 1.48 vs 12 eggs 2.95
+ 
+ Also, show the comparison with 4 digits after the decimal. Sometimes the comparison are so close it has to show more digits after the decimal.
+ 
+ ex: 0.02 vs 0.02 or 0.0235 vs .0215
+*/

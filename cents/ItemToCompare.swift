@@ -28,6 +28,8 @@ enum WeightTypes {
     case gram
     case milligram
     
+    case qty
+    
     func convToGallon(itemToConvert: ItemToCompare) -> ItemToCompare {
         let qrtDiv: Float = 4
         let litDiv: Float = 3.78
