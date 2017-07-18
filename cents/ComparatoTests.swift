@@ -458,6 +458,13 @@ class ComparatoTests: XCTestCase, Comparato {
         XCTAssertEqual(result.betterBuy.price, firstItem.price)
     }
     
+    func testConverAndReturnSecondItemBetterBuy() {
+        firstItem = ItemToCompare(price: 5.00, weight: 1.00, weightType: .pound)
+        secondItem = ItemToCompare(price: 2.48, weight: 9.0, weightType: .ounce)
+        let result = compareItems(itemA: firstItem, itemB: secondItem)
+        XCTAssertEqual(result.betterBuy.price, secondItem.price)
+    }
+    
 }
 
 
