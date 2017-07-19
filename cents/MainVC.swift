@@ -12,7 +12,9 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.blue
+        let mainView = MainView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        self.view.addSubview(mainView)
+        mainView.arrangeView(view: view)
+        
     }
-
 }
