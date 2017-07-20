@@ -13,8 +13,6 @@ class MainView: UIView {
     
     let weightTypes: [String] = ["Lbs", "Oz", "Qty"]
     
-    var titleLabel: UILabel!
-    
     var priceInput: UITextField!
     var weightInput: UITextField!
     weak var weightTypeInput: UITextField!
@@ -24,26 +22,40 @@ class MainView: UIView {
         
         self.backgroundColor = UIColor.white
         
-        titleLabel = UILabel()
-        titleLabel.text = "Better Buy"
-        titleLabel.textAlignment = .center
-        titleLabel.textColor = UIColor.black
+        priceInput = UITextField()
+        priceInput.layer.backgroundColor = UIColor.lightGray.cgColor
+        priceInput.layer.cornerRadius = 5
+        priceInput.textAlignment = .center
         
         weightTypeInput = UITextField()
+        weightTypeInput.layer.backgroundColor = UIColor.lightGray.cgColor
+        weightTypeInput.layer.cornerRadius = 5
+        weightTypeInput.textAlignment = .center
         
-        self.addSubview(titleLabel)
+        weightInput = UITextField()
+        weightInput.layer.backgroundColor = UIColor.lightGray.cgColor
+        weightInput.layer.cornerRadius = 5
+        weightInput.textAlignment = .center
+        
+        self.addSubview(priceInput)
         self.addSubview(weightTypeInput)
+        self.addSubview(weightInput)
     }
     
     func arrangeView(view: UIView) {
-        titleLabel.size.width = view.width * 0.80
-        titleLabel.size.height = 100
-        titleLabel.pin.topCenter().margin(40)
         
-        weightTypeInput.size.width = 40
+        priceInput.size.width = 240
+        priceInput.size.height = 100
+        priceInput.pin.topCenter().margin(130)
+        
+        weightTypeInput.size.width = 80
         weightTypeInput.size.height = 100
-        weightTypeInput.pin.below(of: titleLabel, aligned: .center)
+        weightTypeInput.pin.below(of: priceInput, aligned: .right).marginTop(10)
         weightTypeInput.loadDropDownData(data: weightTypes)
+        
+        weightInput.size.width = 150
+        weightInput.size.height = 100
+        weightInput.pin.below(of: priceInput, aligned: .left).marginTop(10)
         
     }
     
