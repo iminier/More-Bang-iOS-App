@@ -6,21 +6,21 @@
 //  Copyright © 2017 Ivan Minier. All rights reserved.
 //
 
-enum WeightTypes {
+enum WeightTypes: String {
     
-    case gallon
-    case quart
-    case liter
-    case pint
-    case floz
-    case milliliter
+    case gallon = "gal."
+    case quart = "qt."
+    case liter = "Ltr"
+    case pint = "pt."
+    case floz = "fl.oz."
+    case milliliter = "ml."
     
-    case pound
-    case ounce
-    case gram
-    case milligram
+    case pound = "lb."
+    case ounce = "oz."
+    case gram = "gm."
+    case milligram = "mg."
     
-    case qty
+    case qty = "qty."
     
     func convToGallon(itemToConvert: ItemToCompare) -> ItemToCompare {
         let qrtDiv: Float = 4

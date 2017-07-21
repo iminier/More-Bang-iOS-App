@@ -9,6 +9,7 @@
 import UIKit
 
 class MainVC: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,4 +18,5 @@ class MainVC: UIViewController {
         mainView.arrangeView(view: view)
         
     }
+    
 }
