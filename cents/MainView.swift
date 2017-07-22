@@ -9,7 +9,15 @@
 import UIKit
 import PinLayout
 
+protocol MainViewDelegate {
+    
+    func didTapEnter(mainView: MainView, itemToCompare: ItemToCompare)
+    
+}
+
 class MainView: UIView {
+    
+    var delegate: MainViewDelegate?
     
     let keyboardType: UIKeyboardType = UIKeyboardType.decimalPad
     
@@ -61,15 +69,15 @@ class MainView: UIView {
     
     func arrangeTextFields(view: UIView) {
         
-        priceInput.size.width = 240
+        priceInput.size.width = 280
         priceInput.size.height = 100
         priceInput.pin.topCenter().margin(130)
         
-        weightInput.size.width = 150
+        weightInput.size.width = 170
         weightInput.size.height = 100
         weightInput.pin.below(of: priceInput, aligned: .left).marginTop(10)
         
-        weightTypeInput.size.width = 80
+        weightTypeInput.size.width = 100
         weightTypeInput.size.height = 100
         weightTypeInput.pin.below(of: priceInput, aligned: .right).marginTop(10)
         
@@ -77,10 +85,10 @@ class MainView: UIView {
     
     func arrangeButton() {
         
+        bottomButton.size = CGSize(width: 280, height: 80)
         bottomButton.setTitle("Enter", for: .normal)
         bottomButton.setTitleShadowColor(UIColor.black, for: .normal)
         bottomButton.setTitleShadowColor(UIColor.clear, for: .highlighted)
-        bottomButton.size = CGSize(width: 280, height: 80)
         bottomButton.pin.below(of: priceInput, aligned: .center).margin(140)
         
         bottomButton.addTarget(self, action: #selector(showSecondVC), for: .touchUpInside)
@@ -136,20 +144,11 @@ class MainView: UIView {
     
     func showSecondVC() {
         if priceInput.text != "" && weightInput.text != "" && weightTypeInput.text != "" {
+            
             let weightTypeFromTextField: WeightTypes = getWeightTypeFromTextField()
             let itemToBePassed: ItemToCompare = ItemToCompare(price: (priceInput.text! as NSString).floatValue, weight: (weightInput.text! as NSString).floatValue, weightType: weightTypeFromTextField)
             
-            let rootVC = UIApplication.shared.keyWindow?.rootViewController
-            let secondVC = SecondVC()
-            
-            secondVC.firstItem = itemToBePassed
-            print(itemToBePassed)
-            print(WeightTypes.floz.rawValue)
-            
-            
-            rootVC?.navigationController?.pushViewController(secondVC, animated: true)
-
-            //rootVC?.present(secondVC, animated: true, completion: nil)
+            delegate?.didTapEnter(mainView: self, itemToCompare: itemToBePassed)
  
         } else {
             print("some error on device")

@@ -116,12 +116,12 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		D97C44C41F205049007E7D04 /* Classes */ = {
+		D97C44C41F205049007E7D04 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
 				D97C44C51F20506F007E7D04 /* DropDownPickerView.swift */,
 			);
-			name = Classes;
+			name = Structures;
 			sourceTree = "<group>";
 		};
 		D99FF8091F1FF9B6003005F3 /* Models */ = {
@@ -157,7 +157,7 @@
 			children = (
 				D99FF80D1F200F4C003005F3 /* MainView.swift */,
 				D90CE3B61F227D3700D0AC36 /* SecondView.swift */,
-				D97C44C41F205049007E7D04 /* Classes */,
+				D97C44C41F205049007E7D04 /* Structures */,
 				D97C44C31F20502F007E7D04 /* Extensions */,
 			);
 			name = Views;
