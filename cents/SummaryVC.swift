@@ -8,13 +8,16 @@
 
 import UIKit
 
-class SummaryView: UIViewController {
+class SummaryVC: UIViewController {
     
-    var firstItem: ItemToCompare = ItemToCompare(price: 0.00, weight: 0.00, weightType: .gallon)
-    var secondItem: ItemToCompare = ItemToCompare(price: 0.00, weight: 0.00, weightType: .gallon)
+    var firstScreenItem: ItemToCompare = ItemToCompare(price: 0.00, weight: 0.00, weightType: .gallon)
+    var secondScreenItem: ItemToCompare = ItemToCompare(price: 0.00, weight: 0.00, weightType: .gallon)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(firstScreenItem)
+        print(secondScreenItem)
     }
     
 }

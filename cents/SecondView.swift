@@ -8,9 +8,18 @@
 
 import UIKit
 
+protocol SecondViewDelegate {
+    
+    func didTapCompareButton(secondView: SecondView, itemA: ItemToCompare, itemB: ItemToCompare)
+    
+}
+
 class SecondView: MainView {
     
-    var itemFromFirstScreen: ItemToCompare = ItemToCompare(price: 0.00, weight: 0.00, weightType: .gallon)
+    var secondViewDelegate: SecondViewDelegate?
+    
+    
+    var firstItemToBeCompared: ItemToCompare = ItemToCompare(price: 0.00, weight: 0.00, weightType: .gallon)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,9 +32,22 @@ class SecondView: MainView {
 
     }
     
+    override func showSecondVC() {
+        if priceInput.text != "" && weightInput.text != "" && weightTypeInput.text != "" {
+            
+            let weightTypeFromTextField: WeightTypes = getWeightTypeFromTextField()
+            let itemToBePassed: ItemToCompare = ItemToCompare(price: (priceInput.text! as NSString).floatValue, weight: (weightInput.text! as NSString).floatValue, weightType: weightTypeFromTextField)
+            
+            secondViewDelegate?.didTapCompareButton(secondView: self, itemA: firstItemToBeCompared, itemB: itemToBePassed)
+            
+        } else {
+            print("some error on device")
+        }
+    }
+    
     override func setWeightTypes() {
         
-        switch itemFromFirstScreen.weightType {
+        switch firstItemToBeCompared.weightType {
         case .gallon, .quart, .liter, .pint, .floz, .milliliter :
             weightTypes = [WeightTypes.gallon.rawValue,WeightTypes.quart.rawValue, WeightTypes.liter.rawValue, WeightTypes.pint.rawValue, WeightTypes.floz.rawValue, WeightTypes.milliliter.rawValue]
         case .pound, .ounce, .gram, .milligram :

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondVC: UIViewController {
+class SecondVC: UIViewController, SecondViewDelegate {
     
     var firstItem: ItemToCompare = ItemToCompare(price: 0.00, weight: 0.00, weightType: .gallon)
     
@@ -16,10 +16,19 @@ class SecondVC: UIViewController {
         super.viewDidLoad()
         
         let loadedView = SecondView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        loadedView.secondViewDelegate = self
         self.view.addSubview(loadedView)
-        loadedView.itemFromFirstScreen = firstItem
+        loadedView.firstItemToBeCompared = firstItem
         loadedView.arrangeView(view: view)
         
+    }
+    
+    func didTapCompareButton(secondView: SecondView, itemA: ItemToCompare, itemB: ItemToCompare) {
+        let summaryView = SummaryVC()
+        summaryView.firstScreenItem = itemA
+        summaryView.secondScreenItem = itemB
+        
+        self.navigationController?.pushViewController(summaryView, animated: true)
     }
     
 }
