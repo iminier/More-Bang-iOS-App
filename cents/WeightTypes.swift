@@ -10,7 +10,7 @@ enum WeightTypes: String {
     
     case gallon = "gal."
     case quart = "qt."
-    case liter = "Ltr"
+    case liter = "L."
     case pint = "pt."
     case floz = "fl.oz."
     case milliliter = "ml."

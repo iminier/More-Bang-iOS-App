@@ -82,6 +82,8 @@ class MainView: UIView {
         bottomButton.setTitleShadowColor(UIColor.clear, for: .highlighted)
         bottomButton.size = CGSize(width: 280, height: 80)
         bottomButton.pin.below(of: priceInput, aligned: .center).margin(140)
+        
+        bottomButton.addTarget(self, action: #selector(showSecondVC), for: .touchUpInside)
     }
     
     func setWeightTypes() {
@@ -103,25 +105,51 @@ class MainView: UIView {
         
     }
     
-    func showSecondVC(itemToCompare: ItemToCompare) {
-        if priceInput.text != nil, weightInput != nil, weightTypeInput != nil {
-            
-            var weightTypeFromTextField: WeightTypes!
-            
-            switch weightTypeInput {
-            case <#pattern#>:
-                <#code#>
-            default:
-                <#code#>
-            }
+    func getWeightTypeFromTextField() -> WeightTypes {
+        
+        switch weightTypeInput.text! {
+        case "gal.":
+            return .gallon
+        case "qt.":
+            return .quart
+        case "L.":
+            return .liter
+        case "pt.":
+            return .pint
+        case "fl.oz.":
+            return .floz
+        case "ml.":
+            return .milliliter
+        case "lb.":
+            return .pound
+        case "oz.":
+            return .gram
+        case "mg.":
+            return .milligram
+        case "qty.":
+            return .qty
+        default:
+            return .gallon
+        }
+
+    }
+    
+    func showSecondVC() {
+        if priceInput.text != "" && weightInput.text != "" && weightTypeInput.text != "" {
+            let weightTypeFromTextField: WeightTypes = getWeightTypeFromTextField()
+            let itemToBePassed: ItemToCompare = ItemToCompare(price: (priceInput.text! as NSString).floatValue, weight: (weightInput.text! as NSString).floatValue, weightType: weightTypeFromTextField)
             
             let rootVC = UIApplication.shared.keyWindow?.rootViewController
             let secondVC = SecondVC()
             
+            secondVC.firstItem = itemToBePassed
+            print(itemToBePassed)
+            print(WeightTypes.floz.rawValue)
             
-            secondVC.firstItem = ItemToCompare(price: (priceInput.text! as NSString).floatValue, weight: (weightInput.text! as NSString).floatValue, weightType: weightTypeFromTextField)
             
-            rootVC?.present(secondVC, animated: true, completion: nil)
+            rootVC?.navigationController?.pushViewController(secondVC, animated: true)
+
+            //rootVC?.present(secondVC, animated: true, completion: nil)
  
         } else {
             print("some error on device")

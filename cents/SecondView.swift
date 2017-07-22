@@ -10,15 +10,16 @@ import UIKit
 
 class SecondView: MainView {
     
-    var firstItem: ItemToCompare!
+    var itemFromFirstScreen: ItemToCompare = ItemToCompare(price: 0.00, weight: 0.00, weightType: .gallon)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
     }
     
     override func setWeightTypes() {
         
-        switch firstItem.weightType {
+        switch itemFromFirstScreen.weightType {
         case .gallon, .quart, .liter, .pint, .floz, .milliliter :
             weightTypes = [WeightTypes.gallon.rawValue,WeightTypes.quart.rawValue, WeightTypes.liter.rawValue, WeightTypes.pint.rawValue, WeightTypes.floz.rawValue, WeightTypes.milliliter.rawValue]
         case .pound, .ounce, .gram, .milligram :
