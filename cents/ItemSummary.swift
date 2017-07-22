@@ -14,3 +14,4 @@ struct ItemSummary {
     var noBuyPriceBy: Float
     
 }
+

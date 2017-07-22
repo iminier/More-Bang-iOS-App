@@ -18,8 +18,7 @@ class SecondView: MainView {
     
     var secondViewDelegate: SecondViewDelegate?
     
-    
-    var firstItemToBeCompared: ItemToCompare = ItemToCompare(price: 0.00, weight: 0.00, weightType: .gallon)
+    var firstItemToBeCompared: ItemToCompare!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

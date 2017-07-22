@@ -84,8 +84,10 @@ class MainView: UIView {
             return .milliliter
         case "lb.":
             return .pound
-        case "oz.":
+        case "gm.":
             return .gram
+        case "oz.":
+            return .ounce
         case "mg.":
             return .milligram
         case "qty.":

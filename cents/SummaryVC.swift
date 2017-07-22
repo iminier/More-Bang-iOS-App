@@ -10,14 +10,18 @@ import UIKit
 
 class SummaryVC: UIViewController {
     
-    var firstScreenItem: ItemToCompare = ItemToCompare(price: 0.00, weight: 0.00, weightType: .gallon)
-    var secondScreenItem: ItemToCompare = ItemToCompare(price: 0.00, weight: 0.00, weightType: .gallon)
-    
+    var firstScreenItem: ItemToCompare!
+    var secondScreenItem: ItemToCompare!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(firstScreenItem)
-        print(secondScreenItem)
+        let summaryView = SummaryView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        self.view.addSubview(summaryView)
+        summaryView.summaryItemA = firstScreenItem
+        summaryView.summaryItemB = secondScreenItem
+        summaryView.arrangeSummaryView(view: view)
+    
     }
     
 }

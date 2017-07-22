@@ -10,8 +10,8 @@ import UIKit
 
 class SecondVC: UIViewController, SecondViewDelegate {
     
-    var firstItem: ItemToCompare = ItemToCompare(price: 0.00, weight: 0.00, weightType: .gallon)
-    
+    var firstItem: ItemToCompare!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
