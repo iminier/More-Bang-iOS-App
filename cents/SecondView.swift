@@ -17,6 +17,12 @@ class SecondView: MainView {
         
     }
     
+    override func arrangeButtonText() {
+        
+        bottomButton.setTitle("Compare", for: .normal)
+
+    }
+    
     override func setWeightTypes() {
         
         switch itemFromFirstScreen.weightType {

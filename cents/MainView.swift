@@ -67,52 +67,6 @@ class MainView: UIView {
         self.addSubview(bottomButton)
     }
     
-    func arrangeTextFields(view: UIView) {
-        
-        priceInput.size.width = 280
-        priceInput.size.height = 100
-        priceInput.pin.topCenter().margin(130)
-        
-        weightInput.size.width = 170
-        weightInput.size.height = 100
-        weightInput.pin.below(of: priceInput, aligned: .left).marginTop(10)
-        
-        weightTypeInput.size.width = 100
-        weightTypeInput.size.height = 100
-        weightTypeInput.pin.below(of: priceInput, aligned: .right).marginTop(10)
-        
-    }
-    
-    func arrangeButton() {
-        
-        bottomButton.size = CGSize(width: 280, height: 80)
-        bottomButton.setTitle("Enter", for: .normal)
-        bottomButton.setTitleShadowColor(UIColor.black, for: .normal)
-        bottomButton.setTitleShadowColor(UIColor.clear, for: .highlighted)
-        bottomButton.pin.below(of: priceInput, aligned: .center).margin(140)
-        
-        bottomButton.addTarget(self, action: #selector(showSecondVC), for: .touchUpInside)
-    }
-    
-    func setWeightTypes() {
-        weightTypes = [WeightTypes.gallon.rawValue, WeightTypes.floz.rawValue, WeightTypes.milligram.rawValue, WeightTypes.qty.rawValue]
-    }
-    
-    func addDropDownTypes(view: UIView) {
-        
-        setWeightTypes()
-        weightTypeInput.loadDropDownData(data: weightTypes)
-        
-    }
-    
-    func arrangeView(view: UIView) {
-        
-        arrangeTextFields(view: view)
-        arrangeButton()
-        addDropDownTypes(view: view)
-        
-    }
-    
     func getWeightTypeFromTextField() -> WeightTypes {
         
         switch weightTypeInput.text! {
@@ -153,6 +107,58 @@ class MainView: UIView {
         } else {
             print("some error on device")
         }
+    }
+    
+    func arrangeTextFields(view: UIView) {
+        
+        priceInput.size.width = 280
+        priceInput.size.height = 100
+        priceInput.pin.topCenter().margin(130)
+        
+        weightInput.size.width = 170
+        weightInput.size.height = 100
+        weightInput.pin.below(of: priceInput, aligned: .left).marginTop(10)
+        
+        weightTypeInput.size.width = 100
+        weightTypeInput.size.height = 100
+        weightTypeInput.pin.below(of: priceInput, aligned: .right).marginTop(10)
+        
+    }
+    
+    func arrangeButtonText() {
+        
+        bottomButton.setTitle("Enter", for: .normal)
+
+    }
+    
+    func arrangeButton() {
+        
+        arrangeButtonText()
+        bottomButton.size = CGSize(width: 280, height: 80)
+        bottomButton.setTitleShadowColor(UIColor.black, for: .normal)
+        bottomButton.setTitleShadowColor(UIColor.clear, for: .highlighted)
+        bottomButton.pin.below(of: priceInput, aligned: .center).margin(140)
+        
+        bottomButton.addTarget(self, action: #selector(showSecondVC), for: .touchUpInside)
+    }
+    
+    func setWeightTypes() {
+        weightTypes = [WeightTypes.gallon.rawValue, WeightTypes.floz.rawValue, WeightTypes.milligram.rawValue, WeightTypes.qty.rawValue]
+    }
+    
+    func addDropDownTypes(view: UIView) {
+        
+        setWeightTypes()
+        weightTypeInput.loadDropDownData(data: weightTypes)
+        
+    }
+    
+    func arrangeView(view: UIView) {
+        
+        arrangeTextFields(view: view)
+        arrangeButton()
+        addDropDownTypes(view: view)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

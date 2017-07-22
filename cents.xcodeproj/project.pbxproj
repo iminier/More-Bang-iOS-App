@@ -13,6 +13,7 @@
 		D9075BC11F1854A000889026 /* ItemToCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9075BC01F1854A000889026 /* ItemToCompare.swift */; };
 		D90CE3B71F227D3700D0AC36 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90CE3B61F227D3700D0AC36 /* SecondView.swift */; };
 		D90CE3B91F227DF600D0AC36 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90CE3B81F227DF600D0AC36 /* SecondVC.swift */; };
+		D916EA871F23CFAE007105F6 /* SummaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916EA861F23CFAE007105F6 /* SummaryVC.swift */; };
 		D919E5A51F1D5EFD00E127AD /* ComparatoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B5E8941F195C6100FCD080 /* ComparatoTests.swift */; };
 		D9387FF41F1ECDE200A68AE4 /* SplitSelfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909CC331F1D5D03001F9083 /* SplitSelfTests.swift */; };
 		D97C44C21F204F84007E7D04 /* Ext-UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C44C11F204F84007E7D04 /* Ext-UITextField.swift */; };
@@ -47,6 +48,7 @@
 		D909CC351F1D5D03001F9083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D90CE3B61F227D3700D0AC36 /* SecondView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 		D90CE3B81F227DF600D0AC36 /* SecondVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		D916EA861F23CFAE007105F6 /* SummaryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryVC.swift; sourceTree = "<group>"; };
 		D97C44C11F204F84007E7D04 /* Ext-UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext-UITextField.swift"; sourceTree = "<group>"; };
 		D97C44C51F20506F007E7D04 /* DropDownPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownPickerView.swift; sourceTree = "<group>"; };
 		D99FF8071F1FF783003005F3 /* WeightTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightTypes.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				D9D632881F157AE0009D150B /* MainVC.swift */,
 				D90CE3B81F227DF600D0AC36 /* SecondVC.swift */,
+				D916EA861F23CFAE007105F6 /* SummaryVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 			files = (
 				D99FF8081F1FF783003005F3 /* WeightTypes.swift in Sources */,
 				D99FF80E1F200F4C003005F3 /* MainView.swift in Sources */,
+				D916EA871F23CFAE007105F6 /* SummaryVC.swift in Sources */,
 				D9D6328B1F159458009D150B /* Comparato.swift in Sources */,
 				D9D632891F157AE0009D150B /* MainVC.swift in Sources */,
 				D9D632771F1579E2009D150B /* AppDelegate.swift in Sources */,

@@ -15,6 +15,7 @@ class MainVC: UIViewController, MainViewDelegate {
         
         let mainView = MainView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         mainView.delegate = self
+        self.title = "More Bang"
         self.view.addSubview(mainView)
         mainView.arrangeView(view: view)
         
@@ -23,6 +24,9 @@ class MainVC: UIViewController, MainViewDelegate {
     func didTapEnter(mainView: MainView, itemToCompare: ItemToCompare) {
         let someView = SecondVC()
         someView.firstItem = itemToCompare
+        
+        // Not working moving forward for now.
+        self.navigationController?.navigationBar.backItem?.title = "Back"
         self.navigationController?.pushViewController(someView, animated: true)
     }
     
