@@ -28,16 +28,6 @@ class SummaryView: UIView, Comparato {
     var noBuy: UILabel!
     var noBuyPrice: UILabel!
     var noBuyBy: UILabel!
-    
-    
-    
-    /*
-     
-     This is what ItemSummary looks like
-     
-     ItemSummary(betterBuy: cents.ItemToCompare(price: 6.0, weight: 2999.99976, weightType: cents.WeightTypes.milligram), betterBuyPriceBy: 0.00200000009, noBuy: cents.ItemToCompare(price: 3.0, weight: 4.0, weightType: cents.WeightTypes.milligram), noBuyPriceBy: 0.75)
-     
-     */
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,8 +37,18 @@ class SummaryView: UIView, Comparato {
         labelX = UILabel()
         labelY = UILabel()
         
-        self.addSubview(labelX)
-        self.addSubview(labelY)
+        betterBuy = UILabel()
+        betterBuyPrice = UILabel()
+        betterBuyBy = UILabel()
+        
+        noBuy = UILabel()
+        noBuyPrice = UILabel()
+        noBuyBy = UILabel()
+        
+        
+//        self.addSubview(labelX)
+//        self.addSubview(labelY)
+        self.addSubview(betterBuy)
         
     }
 
@@ -57,8 +57,37 @@ class SummaryView: UIView, Comparato {
 
     }
     
+    
+    /*
+     
+     This is what ItemSummary looks like
+     
+     ItemSummary(
+     
+        betterBuy:
+            cents.ItemToCompare
+            (price: 6.0, weight: 2999.99976, weightType: cents.WeightTypes.milligram),
+        betterBuyPriceBy:
+            0.00200000009,
+     
+        noBuy:
+            cents.ItemToCompare
+            (price: 3.0, weight: 4.0, weightType: cents.WeightTypes.milligram),
+        noBuyPriceBy:
+            0.75
+     
+     )
+     
+     */
+    
     func createLabels() {
         getSummaryOfItems()
+        print(summaryOfItems.betterBuy.price)
+        
+        betterBuy.text = "Better Buy: $\(summaryOfItems.betterBuy.price)"
+        betterBuy.font = UIFont(name: "Helvetica", size: 24)
+        betterBuy.textColor = UIColor.black
+        betterBuy.textAlignment = .center
         
         labelX.text = "\(x)"
         labelX.font = UIFont(name: "Helvetica", size: 80)!
@@ -74,13 +103,17 @@ class SummaryView: UIView, Comparato {
     
     func arrangeLabels(view: UIView) {
         
-        labelX.size.width = 80
-        labelX.size.height = 80
-        labelX.pin.topCenter().margin(100)
+        betterBuy.size.width = 200
+        betterBuy.size.height = 30
+        betterBuy.pin.top().margin(80, 20, 10, 0)
         
-        labelY.size.width = 80
-        labelY.size.height = 80
-        labelY.pin.below(of: labelX, aligned: .center).margin(20)
+//        labelX.size.width = 80
+//        labelX.size.height = 80
+//        labelX.pin.topCenter().margin(100)
+//        
+//        labelY.size.width = 80
+//        labelY.size.height = 80
+//        labelY.pin.below(of: labelX, aligned: .center).margin(20)
     }
     
     func arrangeSummaryView(view: UIView) {
@@ -88,13 +121,7 @@ class SummaryView: UIView, Comparato {
         createLabels()
         
         arrangeLabels(view: view)
-        
-        
-        print(summaryItemA)
-        print(summaryItemB)
-        print(summaryOfItems)
-        print(x)
-        print(y)
+
     }
 
 
