@@ -17,6 +17,8 @@
 		D916EA891F23D08C007105F6 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916EA881F23D08C007105F6 /* SummaryView.swift */; };
 		D919E5A51F1D5EFD00E127AD /* ComparatoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B5E8941F195C6100FCD080 /* ComparatoTests.swift */; };
 		D9387FF41F1ECDE200A68AE4 /* SplitSelfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909CC331F1D5D03001F9083 /* SplitSelfTests.swift */; };
+		D93C32B71F26BA1E0076593D /* Ext-StringCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C32B61F26BA1E0076593D /* Ext-StringCurrency.swift */; };
+		D93C32B91F26BEBB0076593D /* Ext-StringWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C32B81F26BEBB0076593D /* Ext-StringWeight.swift */; };
 		D97C44C21F204F84007E7D04 /* Ext-UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C44C11F204F84007E7D04 /* Ext-UITextField.swift */; };
 		D97C44C61F20506F007E7D04 /* DropDownPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C44C51F20506F007E7D04 /* DropDownPickerView.swift */; };
 		D99FF8081F1FF783003005F3 /* WeightTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99FF8071F1FF783003005F3 /* WeightTypes.swift */; };
@@ -51,6 +53,8 @@
 		D90CE3B81F227DF600D0AC36 /* SecondVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		D916EA861F23CFAE007105F6 /* SummaryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryVC.swift; sourceTree = "<group>"; };
 		D916EA881F23D08C007105F6 /* SummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		D93C32B61F26BA1E0076593D /* Ext-StringCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext-StringCurrency.swift"; sourceTree = "<group>"; };
+		D93C32B81F26BEBB0076593D /* Ext-StringWeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext-StringWeight.swift"; sourceTree = "<group>"; };
 		D97C44C11F204F84007E7D04 /* Ext-UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext-UITextField.swift"; sourceTree = "<group>"; };
 		D97C44C51F20506F007E7D04 /* DropDownPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownPickerView.swift; sourceTree = "<group>"; };
 		D99FF8071F1FF783003005F3 /* WeightTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightTypes.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				D97C44C11F204F84007E7D04 /* Ext-UITextField.swift */,
+				D93C32B61F26BA1E0076593D /* Ext-StringCurrency.swift */,
+				D93C32B81F26BEBB0076593D /* Ext-StringWeight.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -379,8 +385,10 @@
 				D97C44C61F20506F007E7D04 /* DropDownPickerView.swift in Sources */,
 				D9075BBD1F18544100889026 /* SplitSelf.swift in Sources */,
 				D97C44C21F204F84007E7D04 /* Ext-UITextField.swift in Sources */,
+				D93C32B71F26BA1E0076593D /* Ext-StringCurrency.swift in Sources */,
 				D9075BC11F1854A000889026 /* ItemToCompare.swift in Sources */,
 				D90CE3B91F227DF600D0AC36 /* SecondVC.swift in Sources */,
+				D93C32B91F26BEBB0076593D /* Ext-StringWeight.swift in Sources */,
 				D9075BBF1F18547C00889026 /* ItemSummary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

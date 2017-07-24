@@ -41,6 +41,7 @@ class MainView: UIView {
         priceInput.layer.cornerRadius = 5
         priceInput.textAlignment = .center
         priceInput.keyboardType = keyboardType
+        priceInput.addTarget(self, action: #selector(priceInputDidChange), for: .editingChanged)
         
         weightTypeInput = UITextField()
         weightTypeInput.layer.backgroundColor = UIColor.lightGray.cgColor
@@ -52,6 +53,7 @@ class MainView: UIView {
         weightInput.layer.cornerRadius = 5
         weightInput.textAlignment = .center
         weightInput.keyboardType = keyboardType
+        weightInput.addTarget(self, action: #selector(weightInputDidChange), for: .editingChanged)
         
         bottomButton = UIButton()
         bottomButton.layer.backgroundColor = UIColor.darkGray.cgColor
@@ -161,6 +163,18 @@ class MainView: UIView {
         arrangeButton()
         addDropDownTypes(view: view)
         
+    }
+    
+    func priceInputDidChange(_ textField: UITextField) {
+        if let amount = textField.text?.currencyInputFormat() {
+            priceInput.text = amount
+        }
+    }
+    
+    func weightInputDidChange(_ textField: UITextField) {
+        if let weight = textField.text?.weightInputFormat() {
+            weightInput.text = weight
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
