@@ -21,7 +21,7 @@ extension String {
         var amountWith = self
         
         formatter.numberStyle = .decimal
-        formatter.maximumFractionDigits = 4
+        formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
         
         let regEx = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
