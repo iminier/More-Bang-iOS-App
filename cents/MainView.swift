@@ -34,7 +34,7 @@ class MainView: UIView {
     var weightLabel: UILabel!
     var weightTypeLabel: UILabel!
     
-    var bottomButton: UIButton!
+    var bottomButton: CentsButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -83,9 +83,10 @@ class MainView: UIView {
         weightTypeLabel.textAlignment = .right
         weightTypeLabel.textColor = UIColor.black
         
-        bottomButton = UIButton()
+        bottomButton = CentsButton()
         bottomButton.layer.backgroundColor = UIColor.darkGray.cgColor
         bottomButton.layer.borderColor = UIColor.lightGray.cgColor
+        bottomButton.layer.shadowColor = UIColor.gray.cgColor
         bottomButton.layer.borderWidth = 2
         bottomButton.layer.cornerRadius = 5
         bottomButton.layer.shadowOpacity = 0.5

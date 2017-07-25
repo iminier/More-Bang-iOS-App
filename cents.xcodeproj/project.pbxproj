@@ -23,6 +23,7 @@
 		D97C44C61F20506F007E7D04 /* DropDownPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C44C51F20506F007E7D04 /* DropDownPickerView.swift */; };
 		D99FF8081F1FF783003005F3 /* WeightTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99FF8071F1FF783003005F3 /* WeightTypes.swift */; };
 		D99FF80E1F200F4C003005F3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99FF80D1F200F4C003005F3 /* MainView.swift */; };
+		D9ACBE551F27EA4900C0F3FC /* CentsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACBE541F27EA4900C0F3FC /* CentsButton.swift */; };
 		D9D632771F1579E2009D150B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D632761F1579E2009D150B /* AppDelegate.swift */; };
 		D9D6327E1F1579E2009D150B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9D6327D1F1579E2009D150B /* Assets.xcassets */; };
 		D9D632811F1579E2009D150B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D6327F1F1579E2009D150B /* LaunchScreen.storyboard */; };
@@ -59,6 +60,7 @@
 		D97C44C51F20506F007E7D04 /* DropDownPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownPickerView.swift; sourceTree = "<group>"; };
 		D99FF8071F1FF783003005F3 /* WeightTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightTypes.swift; sourceTree = "<group>"; };
 		D99FF80D1F200F4C003005F3 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D9ACBE541F27EA4900C0F3FC /* CentsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentsButton.swift; sourceTree = "<group>"; };
 		D9B5E8941F195C6100FCD080 /* ComparatoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComparatoTests.swift; path = ../cents/ComparatoTests.swift; sourceTree = "<group>"; };
 		D9D632731F1579E2009D150B /* cents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D632761F1579E2009D150B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				D97C44C51F20506F007E7D04 /* DropDownPickerView.swift */,
+				D9ACBE541F27EA4900C0F3FC /* CentsButton.swift */,
 			);
 			name = Structures;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9ACBE551F27EA4900C0F3FC /* CentsButton.swift in Sources */,
 				D99FF8081F1FF783003005F3 /* WeightTypes.swift in Sources */,
 				D916EA891F23D08C007105F6 /* SummaryView.swift in Sources */,
 				D99FF80E1F200F4C003005F3 /* MainView.swift in Sources */,
