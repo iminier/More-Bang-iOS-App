@@ -19,6 +19,9 @@ class MainView: UIView {
     
     var delegate: MainViewDelegate?
     
+    let labelFont = UIFont(name: "Helvetica", size: 20)
+    let textFieldFont = UIFont(name: "Helvetica", size: 30)
+    
     let keyboardType: UIKeyboardType = UIKeyboardType.decimalPad
     
     var weightTypes: [String]!
@@ -26,6 +29,10 @@ class MainView: UIView {
     var priceInput: UITextField!
     var weightInput: UITextField!
     var weightTypeInput: UITextField!
+    
+    var priceLabel: UILabel!
+    var weightLabel: UILabel!
+    var weightTypeLabel: UILabel!
     
     var bottomButton: UIButton!
     
@@ -37,6 +44,7 @@ class MainView: UIView {
         weightTypes = []
         
         priceInput = UITextField()
+        priceInput.font = textFieldFont
         priceInput.layer.backgroundColor = UIColor.lightGray.cgColor
         priceInput.layer.cornerRadius = 5
         priceInput.textAlignment = .center
@@ -44,16 +52,36 @@ class MainView: UIView {
         priceInput.addTarget(self, action: #selector(priceInputDidChange), for: .editingChanged)
         
         weightTypeInput = UITextField()
+        weightTypeInput.font = textFieldFont
         weightTypeInput.layer.backgroundColor = UIColor.lightGray.cgColor
         weightTypeInput.layer.cornerRadius = 5
         weightTypeInput.textAlignment = .center
         
         weightInput = UITextField()
+        weightInput.font = textFieldFont
         weightInput.layer.backgroundColor = UIColor.lightGray.cgColor
         weightInput.layer.cornerRadius = 5
         weightInput.textAlignment = .center
         weightInput.keyboardType = keyboardType
         weightInput.addTarget(self, action: #selector(weightInputDidChange), for: .editingChanged)
+        
+        priceLabel = UILabel()
+        priceLabel.font = labelFont
+        priceLabel.text = "Price"
+        priceLabel.textAlignment = .left
+        priceLabel.textColor = UIColor.black
+        
+        weightLabel = UILabel()
+        weightLabel.font = labelFont
+        weightLabel.text = "Weight"
+        weightLabel.textAlignment = .left
+        weightLabel.textColor = UIColor.black
+        
+        weightTypeLabel = UILabel()
+        weightTypeLabel.font = labelFont
+        weightTypeLabel.text = "Type"
+        weightTypeLabel.textAlignment = .right
+        weightTypeLabel.textColor = UIColor.black
         
         bottomButton = UIButton()
         bottomButton.layer.backgroundColor = UIColor.darkGray.cgColor
@@ -66,6 +94,9 @@ class MainView: UIView {
         self.addSubview(priceInput)
         self.addSubview(weightTypeInput)
         self.addSubview(weightInput)
+        self.addSubview(priceLabel)
+        self.addSubview(weightLabel)
+        self.addSubview(weightTypeLabel)
         self.addSubview(bottomButton)
     }
     
@@ -117,16 +148,32 @@ class MainView: UIView {
         
         priceInput.size.width = 280
         priceInput.size.height = 100
-        priceInput.pin.topCenter().margin(130)
+        priceInput.pin.topCenter().margin(120)
         
         weightInput.size.width = 170
         weightInput.size.height = 100
-        weightInput.pin.below(of: priceInput, aligned: .left).marginTop(10)
+        weightInput.pin.below(of: priceInput, aligned: .left).marginTop(50)
         
         weightTypeInput.size.width = 100
         weightTypeInput.size.height = 100
-        weightTypeInput.pin.below(of: priceInput, aligned: .right).marginTop(10)
+        weightTypeInput.pin.below(of: priceInput, aligned: .right).marginTop(50)
         
+    }
+    
+    func arrangeLabels() {
+        
+        priceLabel.size.width = 100
+        priceLabel.size.height = 24
+        priceLabel.pin.above(of: priceInput, aligned: .left).margin(0, 5, 10, 0)
+        
+        weightLabel.size.width = 100
+        weightLabel.size.height = 24
+        weightLabel.pin.above(of: weightInput, aligned: .left).margin(0, 5, 10, 0)
+        
+        weightTypeLabel.size.width = 50
+        weightTypeLabel.size.height = 24
+        weightTypeLabel.pin.above(of: weightTypeInput, aligned: .right).margin(0, 0, 10, 5)
+    
     }
     
     func arrangeButtonText() {
@@ -141,7 +188,7 @@ class MainView: UIView {
         bottomButton.size = CGSize(width: 280, height: 80)
         bottomButton.setTitleShadowColor(UIColor.black, for: .normal)
         bottomButton.setTitleShadowColor(UIColor.clear, for: .highlighted)
-        bottomButton.pin.below(of: priceInput, aligned: .center).margin(140)
+        bottomButton.pin.below(of: priceInput, aligned: .center).margin(190)
         
         bottomButton.addTarget(self, action: #selector(showSecondVC), for: .touchUpInside)
     }
@@ -160,6 +207,7 @@ class MainView: UIView {
     func arrangeView(view: UIView) {
         
         arrangeTextFields(view: view)
+        arrangeLabels()
         arrangeButton()
         addDropDownTypes(view: view)
         
