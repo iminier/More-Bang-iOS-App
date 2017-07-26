@@ -32,6 +32,8 @@ class SummaryView: UIView, Comparato {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        
+        
         self.backgroundColor = UIColor.white
 
         labelX = UILabel()
@@ -81,10 +83,10 @@ class SummaryView: UIView, Comparato {
      */
     
     func createLabels() {
-        getSummaryOfItems()
+        summaryOfItems = compareItems(itemA: summaryItemA, itemB: summaryItemB)
         print(summaryOfItems.betterBuy.price)
         
-        betterBuy.text = "Better Buy: $\(summaryOfItems.betterBuy.price)"
+        betterBuy.text = "Better Buy: $\(summaryOfItems.betterBuy.itemNumber)"
         betterBuy.font = UIFont(name: "Helvetica", size: 24)
         betterBuy.textColor = UIColor.black
         betterBuy.textAlignment = .center

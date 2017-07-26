@@ -26,7 +26,7 @@ class MainVC: UIViewController, MainViewDelegate {
         someView.firstItem = itemToCompare
         
         // Not working moving forward for now.
-        self.navigationController?.navigationBar.backItem?.title = "Back"
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         self.navigationController?.pushViewController(someView, animated: true)
     }
     

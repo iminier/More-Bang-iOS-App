@@ -135,8 +135,11 @@ class MainView: UIView {
     func showSecondVC() {
         if priceInput.text != "" && weightInput.text != "" && weightTypeInput.text != "" {
             
+            var priceTextVCOne = priceInput.text
+            priceTextVCOne?.remove(at: (priceTextVCOne?.startIndex)!)
+            
             let weightTypeFromTextField: WeightTypes = getWeightTypeFromTextField()
-            let itemToBePassed: ItemToCompare = ItemToCompare(price: (priceInput.text! as NSString).floatValue, weight: (weightInput.text! as NSString).floatValue, weightType: weightTypeFromTextField)
+            let itemToBePassed: ItemToCompare = ItemToCompare(itemNumber: 1, price: (priceTextVCOne! as NSString).floatValue, weight: (weightInput.text! as NSString).floatValue, weightType: weightTypeFromTextField)
             
             delegate?.didTapEnter(mainView: self, itemToCompare: itemToBePassed)
  

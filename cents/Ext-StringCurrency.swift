@@ -20,7 +20,7 @@ extension String {
         
         var amountWith = self
         
-        formatter.numberStyle = .currencyAccounting
+        formatter.numberStyle = .currency
         formatter.currencySymbol = "$"
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2

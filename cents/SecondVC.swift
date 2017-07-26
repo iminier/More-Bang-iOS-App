@@ -21,6 +21,9 @@ class SecondVC: UIViewController, SecondViewDelegate {
         loadedView.firstItemToBeCompared = firstItem
         loadedView.arrangeView(view: view)
         
+        // Reset button needs to load rootvc with no data in text fields.
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(resetApp))
+
     }
     
     func didTapCompareButton(secondView: SecondView, itemA: ItemToCompare, itemB: ItemToCompare) {
@@ -28,7 +31,14 @@ class SecondVC: UIViewController, SecondViewDelegate {
         summaryView.firstScreenItem = itemA
         summaryView.secondScreenItem = itemB
         
+        
         self.navigationController?.pushViewController(summaryView, animated: true)
+    }
+    
+    func resetApp() {
+        firstItem = ItemToCompare(itemNumber: 1, price: 0, weight: 0, weightType: .gallon)
+        self.navigationController?.popToRootViewController(animated: true)
+        
     }
     
 }

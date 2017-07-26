@@ -8,6 +8,7 @@
 
 struct ItemToCompare: SplitSelf {
     
+    var itemNumber: Int
     var price: Float
     var weight: Float
     var weightType: WeightTypes

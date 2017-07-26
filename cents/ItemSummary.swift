@@ -9,8 +9,10 @@
 struct ItemSummary {
     
     var betterBuy: ItemToCompare
+    var bbItemNum: Int
     var betterBuyPriceBy: Float
     var noBuy: ItemToCompare
+    var nbItemNum: Int
     var noBuyPriceBy: Float
     
 }

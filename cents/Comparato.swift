@@ -75,10 +75,10 @@ extension Comparato {
         }
         
         if itemA.dividePriceByWeight(item: itemA) < newItemB.dividePriceByWeight(item: newItemB) {
-            summary = ItemSummary(betterBuy: itemA, betterBuyPriceBy: itemA.dividePriceByWeight(item: itemA), noBuy: newItemB, noBuyPriceBy: newItemB.dividePriceByWeight(item: newItemB))
+            summary = ItemSummary(betterBuy: itemA, bbItemNum: itemA.itemNumber, betterBuyPriceBy: itemA.dividePriceByWeight(item: itemA), noBuy: newItemB, nbItemNum: itemB.itemNumber, noBuyPriceBy: newItemB.dividePriceByWeight(item: newItemB))
             return summary
         } else {
-            summary = ItemSummary(betterBuy: newItemB, betterBuyPriceBy: newItemB.dividePriceByWeight(item: newItemB), noBuy: itemA, noBuyPriceBy: itemA.dividePriceByWeight(item: itemA))
+            summary = ItemSummary(betterBuy: newItemB, bbItemNum: itemB.itemNumber, betterBuyPriceBy: newItemB.dividePriceByWeight(item: newItemB), noBuy: itemA, nbItemNum: itemA.itemNumber, noBuyPriceBy: itemA.dividePriceByWeight(item: itemA))
             return summary
         }
         
