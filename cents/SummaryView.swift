@@ -16,6 +16,7 @@ class SummaryView: UIView, Comparato {
     let labelFont: UIFont = UIFont(name: "Helvetica", size: 24)!
     let labelTextColor: UIColor = UIColor.black
     let labelSize: CGSize = CGSize(width: 200, height: 30)
+    let labelTextAlignment: NSTextAlignment = .center
     
     var labelX: UILabel!
     var labelY: UILabel!
@@ -58,26 +59,32 @@ class SummaryView: UIView, Comparato {
         topPriceLabel = UILabel()
         topPriceLabel.font = labelFont
         topPriceLabel.textColor = labelTextColor
+        topPriceLabel.textAlignment = labelTextAlignment
         
         topWeightLabel = UILabel()
         topWeightLabel.font = labelFont
         topWeightLabel.textColor = labelTextColor
+        topWeightLabel.textAlignment = labelTextAlignment
         
         topPricePerLabel = UILabel()
         topPricePerLabel.font = labelFont
         topPricePerLabel.textColor = labelTextColor
+        topPricePerLabel.textAlignment = labelTextAlignment
         
         botPriceLabel = UILabel()
         botPriceLabel.font = labelFont
         botPriceLabel.textColor = labelTextColor
+        botPriceLabel.textAlignment = labelTextAlignment
         
         botWeightLabel = UILabel()
         botWeightLabel.font = labelFont
         botWeightLabel.textColor = labelTextColor
+        botWeightLabel.textAlignment = labelTextAlignment
         
         botPricePerLabel = UILabel()
         botPricePerLabel.font = labelFont
         botPricePerLabel.textColor = labelTextColor
+        botPricePerLabel.textAlignment = labelTextAlignment
         
         self.addSubview(topFrame)
         self.addSubview(botFrame)
@@ -132,23 +139,26 @@ class SummaryView: UIView, Comparato {
         case 1:
             
             topPriceLabel.text = "$\(summaryOfItems.betterBuy.price)"
-            topWeightLabel.text = "\(summaryOfItems.betterBuy.weight)"
-            topPricePerLabel.text = "\(summaryOfItems.betterBuyPriceBy) per \(summaryOfItems.betterBuy.weightType)"
+            topWeightLabel.text = "\(summaryOfItems.betterBuy.weight) \(summaryOfItems.betterBuy.weightType)(s)"
+            let topPricePerLabelString = String(format: "%3f", summaryOfItems.betterBuyPriceBy)
+            topPricePerLabel.text = "\(topPricePerLabelString) per \(summaryOfItems.betterBuy.weightType)"
             
             botPriceLabel.text = "$\(summaryOfItems.noBuy.price)"
-            botWeightLabel.text = "#: \(summaryOfItems.noBuy.weight)"
-            botPricePerLabel.text = "*: \(summaryOfItems.noBuyPriceBy) per \(summaryOfItems.noBuy.weightType)"
+            botWeightLabel.text = "\(summaryOfItems.noBuy.weight) \(summaryOfItems.noBuy.weightType)(s)"
+            let botPricePerLabelString = String(format: "%3f", summaryOfItems.noBuyPriceBy)
+            botPricePerLabel.text = "\(botPricePerLabelString) per \(summaryOfItems.noBuy.weightType)"
             
-        
         default:
             
             topPriceLabel.text = "$\(summaryOfItems.noBuy.price)"
-            topWeightLabel.text = "#: \(summaryOfItems.noBuy.weight)"
-            topPricePerLabel.text = "*: \(summaryOfItems.noBuyPriceBy) per \(summaryOfItems.noBuy.weightType)"
+            topWeightLabel.text = "\(summaryOfItems.noBuy.weight) \(summaryOfItems.noBuy.weightType)(s)"
+            let topPricePerLabelString = String(format: "%3f", summaryOfItems.noBuyPriceBy)
+            topPricePerLabel.text = "\(topPricePerLabelString) per \(summaryOfItems.noBuy.weightType)"
             
             botPriceLabel.text = "$\(summaryOfItems.betterBuy.price)"
-            botWeightLabel.text = "\(summaryOfItems.betterBuy.weight)"
-            botPricePerLabel.text = "\(summaryOfItems.betterBuyPriceBy) per \(summaryOfItems.betterBuy.weightType)"
+            botWeightLabel.text = "\(summaryOfItems.betterBuy.weight) \(summaryOfItems.betterBuy.weightType)(s)"
+            let botPricePerLabelString = String(format: "%3f", summaryOfItems.betterBuyPriceBy)
+            botPricePerLabel.text = "\(botPricePerLabelString) per \(summaryOfItems.betterBuy.weightType)"
             
         }
 
@@ -186,16 +196,24 @@ class SummaryView: UIView, Comparato {
     func arrangeLabels(view: UIView) {
         createFrames(view: view)
         
-        topPriceLabel.hCenter = topFrame.center.x - (topFrame.width / 2) + (topPriceLabel.width / 2) + 10
-        topPriceLabel.vCenter = topFrame.center.y - (topFrame.height / 2) + 25
-        topWeightLabel.pin.below(of: topPriceLabel, aligned: .left)
-        topPricePerLabel.pin.below(of: topWeightLabel, aligned: .left)
+//        topPriceLabel.hCenter = topFrame.center.x - (topFrame.width / 2) + (topPriceLabel.width / 2) + 10
+//        topPriceLabel.vCenter = topFrame.center.y - (topFrame.height / 2) + 25
+//        topWeightLabel.pin.below(of: topPriceLabel, aligned: .left)
+//        topPricePerLabel.pin.below(of: topWeightLabel, aligned: .left)
+//        
+//        botPriceLabel.hCenter = botFrame.center.x - (botFrame.width / 2) + (botPriceLabel.width / 2) + 10
+//        botPriceLabel.vCenter = botFrame.center.y - (botFrame.height / 2) + 25
+//        botWeightLabel.pin.below(of: botPriceLabel, aligned: .left)
+//        botPricePerLabel.pin.below(of: botWeightLabel, aligned: .left)
         
-        botPriceLabel.hCenter = botFrame.center.x - (botFrame.width / 2) + (botPriceLabel.width / 2) + 10
-        botPriceLabel.vCenter = botFrame.center.y - (botFrame.height / 2) + 25
-        botWeightLabel.pin.below(of: botPriceLabel, aligned: .left)
-        botPricePerLabel.pin.below(of: botWeightLabel, aligned: .left)
         
+        topWeightLabel.pin.center(to: topFrame.anchor.center)
+        topPriceLabel.pin.above(of: topWeightLabel, aligned: .center).marginBottom(10)
+        topPricePerLabel.pin.below(of: topWeightLabel, aligned: .center).marginTop(10)
+        
+        botWeightLabel.pin.center(to: botFrame.anchor.center)
+        botPriceLabel.pin.above(of: botWeightLabel, aligned: .center).marginBottom(10)
+        botPricePerLabel.pin.below(of: botWeightLabel, aligned: .center).marginTop(10)
         
 
         
