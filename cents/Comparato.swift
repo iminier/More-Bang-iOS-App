@@ -15,7 +15,6 @@ protocol Comparato {
 extension Comparato {
     
     func convertToCommon(commonItem: ItemToCompare, itemB: ItemToCompare) -> ItemToCompare {
-        
         var secondItem: ItemToCompare
         
         if commonItem.weightType == itemB.weightType {
@@ -58,14 +57,10 @@ extension Comparato {
                 return secondItem
             }
         }
-        
-        
     }
     
     func compareItems(itemA: ItemToCompare, itemB: ItemToCompare) -> ItemSummary {
-        
         let summary: ItemSummary
-        
         var newItemB: ItemToCompare
         
         if itemA.weightType != itemB.weightType {
@@ -81,9 +76,7 @@ extension Comparato {
             summary = ItemSummary(betterBuy: newItemB, bbItemNum: itemB.itemNumber, betterBuyPriceBy: newItemB.dividePriceByWeight(item: newItemB), noBuy: itemA, nbItemNum: itemA.itemNumber, noBuyPriceBy: itemA.dividePriceByWeight(item: itemA))
             return summary
         }
-        
     }
-    
 }
 
 

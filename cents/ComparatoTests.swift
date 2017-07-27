@@ -27,43 +27,43 @@ class ComparatoTests: XCTestCase, Comparato {
     //
     
     func testGallonToQuartConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gallon)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .liter)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .gallon)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .liter)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testGallonToLiterConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gallon)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .liter)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .gallon)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .liter)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testGallonToPintConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gallon)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pint)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .gallon)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .pint)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testGallonToFlozConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gallon)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .floz)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .gallon)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .floz)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testGallonToMLConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gallon)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milliliter)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .gallon)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .milliliter)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testGallonToGallonConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gallon)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gallon)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .gallon)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .gallon)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
@@ -73,43 +73,43 @@ class ComparatoTests: XCTestCase, Comparato {
     //
     
     func testQuartToGallonConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .quart)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gallon)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .quart)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .gallon)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testQuartToLiterConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .quart)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .liter)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .quart)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .liter)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testQuartToPintConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .quart)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pint)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .quart)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .pint)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
 
     func testQuartToFlozConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .quart)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .floz)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .quart)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .floz)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testQuartToMLConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .quart)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milliliter)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .quart)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .milliliter)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testQuartToQuartConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .quart)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .quart)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .quart)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .quart)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
@@ -119,43 +119,43 @@ class ComparatoTests: XCTestCase, Comparato {
     //
     
     func testLiterToGallonConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .liter)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gallon)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .liter)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .gallon)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testLiterToQuartConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .liter)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .quart)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .liter)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .quart)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testLiterToPintConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .liter)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pint)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .liter)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .pint)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testLiterToFlozConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .liter)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .floz)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .liter)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .floz)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testLiterToMLConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .liter)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milliliter)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .liter)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .milliliter)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testLiterToLiterConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .liter)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .liter)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .liter)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .liter)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
@@ -165,43 +165,43 @@ class ComparatoTests: XCTestCase, Comparato {
     //
     
     func testPintToGallonConverstion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pint)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gallon)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .pint)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .gallon)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testPintToQuartConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pint)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .quart)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .pint)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .quart)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testPintToLiterConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pint)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .liter)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .pint)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .liter)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testPintToFlozConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pint)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .floz)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .pint)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .floz)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testPintToMilliliterConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pint)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milliliter)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .pint)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .milliliter)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testPintToPintConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pint)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pint)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .pint)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .pint)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
@@ -211,43 +211,43 @@ class ComparatoTests: XCTestCase, Comparato {
     //
     
     func testFloztoGallonConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .floz)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gallon)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .floz)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .gallon)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testFlozToQuartConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .floz)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .quart)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .floz)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .quart)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testFlozToLiterConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .floz)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .liter)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .floz)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .liter)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testFlozToPintConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .floz)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pint)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .floz)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .pint)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testFlozToMLConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .floz)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milliliter)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .floz)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .milliliter)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testFlozToFlozConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .floz)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .floz)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .floz)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .floz)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
@@ -257,43 +257,43 @@ class ComparatoTests: XCTestCase, Comparato {
     //
     
     func testMLToGallonConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milliliter)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gallon)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .milliliter)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .gallon)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testMLToQuartConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milliliter)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .quart)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .milliliter)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .quart)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testMLToLiterConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milliliter)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .liter)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .milliliter)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .liter)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testMLToPintConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milliliter)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pint)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .milliliter)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .pint)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testMLToFlozConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milliliter)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .floz)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .milliliter)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .floz)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testMLToMLConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milliliter)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milliliter)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .milliliter)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .milliliter)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
@@ -303,29 +303,29 @@ class ComparatoTests: XCTestCase, Comparato {
     //
     
     func testPoundToOunceConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pound)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .ounce)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .pound)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .ounce)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testPoundToGramConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pound)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gram)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .pound)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .gram)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testPoundToMgConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pound)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milligram)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .pound)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .milligram)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testPoundToPoundConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pound)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pound)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .pound)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .pound)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
@@ -335,29 +335,29 @@ class ComparatoTests: XCTestCase, Comparato {
     //
     
     func testOunceToPoundConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .ounce)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pound)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .ounce)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .pound)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testOunceToGramConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .ounce)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gram)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .ounce)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .gram)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testOunceToMgConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .ounce)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milligram)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .ounce)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .milligram)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testOunceToOunceConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .ounce)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .ounce)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .ounce)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .ounce)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
@@ -367,29 +367,29 @@ class ComparatoTests: XCTestCase, Comparato {
     //
     
     func testGramToPoundConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gram)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pound)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .gram)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .pound)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testGramToOunceConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gram)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .ounce)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .gram)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .ounce)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testGramToMGConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gram)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milligram)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .gram)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .milligram)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testGramToGramConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gram)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gram)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .gram)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .gram)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
@@ -399,29 +399,29 @@ class ComparatoTests: XCTestCase, Comparato {
     //
     
     func testMgtoPoundCnversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milligram)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pound)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .milligram)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .pound)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testMgToOunceConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milligram)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .ounce)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .milligram)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .ounce)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testMgToGramCoversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milligram)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .gram)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .milligram)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .gram)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
     
     func testMgToMgConversion() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milligram)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .milligram)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .milligram)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .milligram)
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
@@ -431,36 +431,36 @@ class ComparatoTests: XCTestCase, Comparato {
     //
     
     func testReturnsItemSummary() {
-        firstItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .ounce)
-        secondItem = ItemToCompare(price: 1.00, weight: 1.00, weightType: .ounce)
+        firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .ounce)
+        secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .ounce)
         let result = compareItems(itemA: firstItem, itemB: secondItem)
         XCTAssertTrue(result is ItemSummary)
     }
     
     func testReturnsSecondItemAsBetterBuy() {
-        firstItem = ItemToCompare(price: 2.48, weight: 9.0, weightType: .ounce)
-        secondItem = ItemToCompare(price: 3.48, weight: 18.00, weightType: .ounce)
+        firstItem = ItemToCompare(itemNumber: 1, price: 2.48, weight: 9.0, weightType: .ounce)
+        secondItem = ItemToCompare(itemNumber: 2, price: 3.48, weight: 18.00, weightType: .ounce)
         let result = compareItems(itemA: firstItem, itemB: secondItem)
         XCTAssertEqual(result.betterBuy.price, secondItem.price)
     }
     
     func testReturnsFirstItemAsBetterBuy() {
-        firstItem = ItemToCompare(price: 3.48, weight: 18.00, weightType: .ounce)
-        secondItem = ItemToCompare(price: 2.48, weight: 9.0, weightType: .ounce)
+        firstItem = ItemToCompare(itemNumber: 1, price: 3.48, weight: 18.00, weightType: .ounce)
+        secondItem = ItemToCompare(itemNumber: 2, price: 2.48, weight: 9.0, weightType: .ounce)
         let result = compareItems(itemA: firstItem, itemB: secondItem)
         XCTAssertEqual(result.betterBuy.price, firstItem.price)
     }
     
     func testConvertAndReturnFirstItemBetterBuy() {
-        firstItem = ItemToCompare(price: 2.48, weight: 9.0, weightType: .ounce)
-        secondItem = ItemToCompare(price: 5.00, weight: 1.0, weightType: .pound)
+        firstItem = ItemToCompare(itemNumber: 1, price: 2.48, weight: 9.0, weightType: .ounce)
+        secondItem = ItemToCompare(itemNumber: 2, price: 5.00, weight: 1.0, weightType: .pound)
         let result = compareItems(itemA: firstItem, itemB: secondItem)
         XCTAssertEqual(result.betterBuy.price, firstItem.price)
     }
     
     func testConverAndReturnSecondItemBetterBuy() {
-        firstItem = ItemToCompare(price: 5.00, weight: 1.00, weightType: .pound)
-        secondItem = ItemToCompare(price: 2.48, weight: 9.0, weightType: .ounce)
+        firstItem = ItemToCompare(itemNumber: 1, price: 5.00, weight: 1.00, weightType: .pound)
+        secondItem = ItemToCompare(itemNumber: 2, price: 2.48, weight: 9.0, weightType: .ounce)
         let result = compareItems(itemA: firstItem, itemB: secondItem)
         XCTAssertEqual(result.betterBuy.price, secondItem.price)
     }

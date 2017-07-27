@@ -17,6 +17,7 @@ class SummaryView: UIView, Comparato {
     let labelTextColor: UIColor = UIColor.black
     let labelSize: CGSize = CGSize(width: 200, height: 30)
     let labelTextAlignment: NSTextAlignment = .center
+    let frameBackgroundColor: UIColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.0)
     
     var labelX: UILabel!
     var labelY: UILabel!
@@ -40,18 +41,15 @@ class SummaryView: UIView, Comparato {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor(red:0.65, green:0.89, blue:1.00, alpha:1)
+        self.backgroundColor = UIColor(red:0.51, green:0.86, blue:0.90, alpha:1.0)
         
         topFrame = UIImageView()
-        topFrame.backgroundColor = UIColor.white
-        topFrame.layer.borderWidth = 5
+        topFrame.backgroundColor = frameBackgroundColor
         topFrame.layer.shadowOpacity = 0.7
         
         botFrame = UIImageView()
-        botFrame.backgroundColor = UIColor.white
-        botFrame.layer.borderWidth = 5
+        botFrame.backgroundColor = frameBackgroundColor
         botFrame.layer.shadowOpacity = 0.7
-        
 
         labelX = UILabel()
         labelY = UILabel()
@@ -88,78 +86,62 @@ class SummaryView: UIView, Comparato {
         
         self.addSubview(topFrame)
         self.addSubview(botFrame)
-        
         self.addSubview(topPriceLabel)
         self.addSubview(topWeightLabel)
         self.addSubview(topPricePerLabel)
         self.addSubview(botPriceLabel)
         self.addSubview(botWeightLabel)
         self.addSubview(botPricePerLabel)
-        
-//        self.addSubview(labelX)
-//        self.addSubview(labelY)
-        
+        self.addSubview(labelX)
+        self.addSubview(labelY)
     }
 
     func getSummaryOfItems() {
         summaryOfItems = compareItems(itemA: summaryItemA, itemB: summaryItemB)
-
     }
     
     func createFrames(view: UIView) {
-        
         topFrame.size = CGSize(width: 280, height: 224)
         topFrame.pin.topCenter().margin(80, 0, 0, 0)
-
         botFrame.size = CGSize(width: 280, height: 224)
         botFrame.pin.below(of: topFrame, aligned: .center).margin(20, 0, 0, 0)
-        
     }
     
-    func setFrameBorderColor() {
-        
+    func setFrameImages() {
         switch summaryOfItems.bbItemNum {
         case 1:
-            
-            botFrame.layer.borderColor = UIColor.red.cgColor
-            topFrame.layer.borderColor = UIColor.green.cgColor
-            
+            labelX.hCenter = botFrame.center.x + ((botFrame.width / 2) - 40)
+            labelX.vCenter = botFrame.center.y - ((botFrame.height / 2) - 40)
+            labelY.hCenter = topFrame.center.x + ((topFrame.width / 2) - 40)
+            labelY.vCenter = topFrame.center.y - ((topFrame.height / 2) - 40)
         default:
-            
-            topFrame.layer.borderColor = UIColor.red.cgColor
-            botFrame.layer.borderColor = UIColor.green.cgColor
-            
+            labelX.hCenter = topFrame.center.x + ((topFrame.width / 2) - 40)
+            labelX.vCenter = topFrame.center.y - ((topFrame.height / 2) - 40)
+            labelY.hCenter = botFrame.center.x + ((botFrame.width / 2) - 40)
+            labelY.vCenter = botFrame.center.y - ((botFrame.height / 2) - 40)
         }
-        
     }
 
     func addTextToLabels() {
-        
         switch summaryOfItems.bbItemNum {
         case 1:
-            
             topPriceLabel.text = "$\(summaryOfItems.betterBuy.price)"
             topWeightLabel.text = "\(summaryOfItems.betterBuy.weight) \(summaryOfItems.betterBuy.weightType)(s)"
-            let topPricePerLabelString = String(format: "%3f", summaryOfItems.betterBuyPriceBy)
+            let topPricePerLabelString = String(format: "%.03f", summaryOfItems.betterBuyPriceBy)
             topPricePerLabel.text = "\(topPricePerLabelString) per \(summaryOfItems.betterBuy.weightType)"
-            
             botPriceLabel.text = "$\(summaryOfItems.noBuy.price)"
             botWeightLabel.text = "\(summaryOfItems.noBuy.weight) \(summaryOfItems.noBuy.weightType)(s)"
-            let botPricePerLabelString = String(format: "%3f", summaryOfItems.noBuyPriceBy)
+            let botPricePerLabelString = String(format: "%.03f", summaryOfItems.noBuyPriceBy)
             botPricePerLabel.text = "\(botPricePerLabelString) per \(summaryOfItems.noBuy.weightType)"
-            
         default:
-            
             topPriceLabel.text = "$\(summaryOfItems.noBuy.price)"
             topWeightLabel.text = "\(summaryOfItems.noBuy.weight) \(summaryOfItems.noBuy.weightType)(s)"
-            let topPricePerLabelString = String(format: "%3f", summaryOfItems.noBuyPriceBy)
+            let topPricePerLabelString = String(format: "%.03f", summaryOfItems.noBuyPriceBy)
             topPricePerLabel.text = "\(topPricePerLabelString) per \(summaryOfItems.noBuy.weightType)"
-            
             botPriceLabel.text = "$\(summaryOfItems.betterBuy.price)"
             botWeightLabel.text = "\(summaryOfItems.betterBuy.weight) \(summaryOfItems.betterBuy.weightType)(s)"
-            let botPricePerLabelString = String(format: "%3f", summaryOfItems.betterBuyPriceBy)
+            let botPricePerLabelString = String(format: "%.03f", summaryOfItems.betterBuyPriceBy)
             botPricePerLabel.text = "\(botPricePerLabelString) per \(summaryOfItems.betterBuy.weightType)"
-            
         }
 
     }
@@ -168,26 +150,21 @@ class SummaryView: UIView, Comparato {
         summaryOfItems = compareItems(itemA: summaryItemA, itemB: summaryItemB)
         
         addTextToLabels()
-        setFrameBorderColor()
-        
-        print(botWeightLabel)
-        print(botPricePerLabel)
         
         topPriceLabel.size = labelSize
         topWeightLabel.size = labelSize
         topPricePerLabel.size = labelSize
-
         botPriceLabel.size = labelSize
         botWeightLabel.size = labelSize
         botPricePerLabel.size = labelSize
         
         labelX.text = "\(x)"
-        labelX.font = UIFont(name: "Helvetica", size: 80)!
+        labelX.font = UIFont(name: "Helvetica", size: 40)!
         labelX.textColor = UIColor.red
         labelX.textAlignment = .center
 
         labelY.text = "\(y)"
-        labelY.font = UIFont(name: "Helvetica", size: 80)!
+        labelY.font = UIFont(name: "Helvetica", size: 40)!
         labelY.textColor = UIColor.green
         labelY.textAlignment = .center
         
@@ -196,80 +173,27 @@ class SummaryView: UIView, Comparato {
     func arrangeLabels(view: UIView) {
         createFrames(view: view)
         
-//        topPriceLabel.hCenter = topFrame.center.x - (topFrame.width / 2) + (topPriceLabel.width / 2) + 10
-//        topPriceLabel.vCenter = topFrame.center.y - (topFrame.height / 2) + 25
-//        topWeightLabel.pin.below(of: topPriceLabel, aligned: .left)
-//        topPricePerLabel.pin.below(of: topWeightLabel, aligned: .left)
-//        
-//        botPriceLabel.hCenter = botFrame.center.x - (botFrame.width / 2) + (botPriceLabel.width / 2) + 10
-//        botPriceLabel.vCenter = botFrame.center.y - (botFrame.height / 2) + 25
-//        botWeightLabel.pin.below(of: botPriceLabel, aligned: .left)
-//        botPricePerLabel.pin.below(of: botWeightLabel, aligned: .left)
-        
-        
         topWeightLabel.pin.center(to: topFrame.anchor.center)
         topPriceLabel.pin.above(of: topWeightLabel, aligned: .center).marginBottom(10)
         topPricePerLabel.pin.below(of: topWeightLabel, aligned: .center).marginTop(10)
-        
         botWeightLabel.pin.center(to: botFrame.anchor.center)
         botPriceLabel.pin.above(of: botWeightLabel, aligned: .center).marginBottom(10)
         botPricePerLabel.pin.below(of: botWeightLabel, aligned: .center).marginTop(10)
         
-
-        
-//        labelX.size.width = 80
-//        labelX.size.height = 80
-//        labelX.pin.topCenter().margin(100)
-//        
-//        labelY.size.width = 80
-//        labelY.size.height = 80
-//        labelY.pin.below(of: labelX, aligned: .center).margin(20)
+        labelX.size.width = 40
+        labelX.size.height = 40
+        labelY.size.width = 40
+        labelY.size.height = 40
     }
     
     func arrangeSummaryView(view: UIView) {
-        
         createLabels()
-        
         arrangeLabels(view: view)
-
+        setFrameImages()
     }
-
-
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
 }
-
-
-
-
-
-
-
-
-
-/*
- 
- This is what ItemSummary looks like
- 
- ItemSummary(
- 
- betterBuy:
- cents.ItemToCompare
- (price: 6.0, weight: 2999.99976, weightType: cents.WeightTypes.milligram),
- betterBuyPriceBy:
- 0.00200000009,
- 
- noBuy:
- cents.ItemToCompare
- (price: 3.0, weight: 4.0, weightType: cents.WeightTypes.milligram),
- noBuyPriceBy:
- 0.75
- 
- )
- 
- */
-

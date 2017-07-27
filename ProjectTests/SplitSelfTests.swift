@@ -22,7 +22,7 @@ class SplitSelfTests: XCTestCase, Comparato {
     }
     
     func testSplitReturnsFloat() {
-        itemToSplit = ItemToCompare(price: 1.00, weight: 1.00, weightType: .pound)
+        itemToSplit = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .pound)
         let result = itemToSplit.dividePriceByWeight(item: itemToSplit)
         XCTAssertTrue(result is Float)
     }
