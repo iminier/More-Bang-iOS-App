@@ -466,39 +466,3 @@ class ComparatoTests: XCTestCase, Comparato {
     }
     
 }
-
-
-/* 
- Cereal
- 9 oz 2.48 vs 18 oz 3.48 vs 24 oz 4.24
- 
- Nuts
- 8 oz 3.98 vs 15 oz 7.48
- 
- Raisins
- 9 oz 2.98 vs 12 oz 3.88
- 
- 
- Milk
- 64 fl oz 2.98 vs 96 fl oz 4.98
- 
- Wine
- 750 ml 19.98 vs 1 liter 25.48
- 
- Shampoo
- 24 fl oz 2.98 vs 1 liter (33.8 oz) 4.68
- 
- Body Wash
- 22 fl oz 4.48 vs 26 fl oz 5.98
- 
- You can also add a comparison for quantity of items.
- 
- 24 items vs 32 items
- 3.98 vs 5.24
- 
- 6 eggs 1.48 vs 12 eggs 2.95
- 
- Also, show the comparison with 4 digits after the decimal. Sometimes the comparison are so close it has to show more digits after the decimal.
- 
- ex: 0.02 vs 0.02 or 0.0235 vs .0215
-*/
