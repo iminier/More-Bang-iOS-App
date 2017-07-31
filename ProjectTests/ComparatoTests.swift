@@ -92,7 +92,7 @@ class ComparatoTests: XCTestCase, Comparato {
         let result = convertToCommon(commonItem: firstItem, itemB: secondItem)
         XCTAssertEqual(firstItem.weightType, result.weightType)
     }
-
+    
     func testQuartToFlozConversion() {
         firstItem = ItemToCompare(itemNumber: 1, price: 1.00, weight: 1.00, weightType: .quart)
         secondItem = ItemToCompare(itemNumber: 2, price: 1.00, weight: 1.00, weightType: .floz)
@@ -466,4 +466,3 @@ class ComparatoTests: XCTestCase, Comparato {
     }
     
 }
-

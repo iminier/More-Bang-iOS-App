@@ -15,10 +15,10 @@
 		D90CE3B91F227DF600D0AC36 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90CE3B81F227DF600D0AC36 /* SecondVC.swift */; };
 		D916EA871F23CFAE007105F6 /* SummaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916EA861F23CFAE007105F6 /* SummaryVC.swift */; };
 		D916EA891F23D08C007105F6 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916EA881F23D08C007105F6 /* SummaryView.swift */; };
-		D919E5A51F1D5EFD00E127AD /* ComparatoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B5E8941F195C6100FCD080 /* ComparatoTests.swift */; };
 		D9387FF41F1ECDE200A68AE4 /* SplitSelfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909CC331F1D5D03001F9083 /* SplitSelfTests.swift */; };
 		D93C32B71F26BA1E0076593D /* Ext-StringCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C32B61F26BA1E0076593D /* Ext-StringCurrency.swift */; };
 		D93C32B91F26BEBB0076593D /* Ext-StringWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C32B81F26BEBB0076593D /* Ext-StringWeight.swift */; };
+		D96652D51F2FC1A800DC47B3 /* ComparatoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96652D41F2FC1A800DC47B3 /* ComparatoTests.swift */; };
 		D97C44C21F204F84007E7D04 /* Ext-UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C44C11F204F84007E7D04 /* Ext-UITextField.swift */; };
 		D97C44C61F20506F007E7D04 /* DropDownPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C44C51F20506F007E7D04 /* DropDownPickerView.swift */; };
 		D99FF8081F1FF783003005F3 /* WeightTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99FF8071F1FF783003005F3 /* WeightTypes.swift */; };
@@ -56,12 +56,12 @@
 		D916EA881F23D08C007105F6 /* SummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		D93C32B61F26BA1E0076593D /* Ext-StringCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext-StringCurrency.swift"; sourceTree = "<group>"; };
 		D93C32B81F26BEBB0076593D /* Ext-StringWeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext-StringWeight.swift"; sourceTree = "<group>"; };
+		D96652D41F2FC1A800DC47B3 /* ComparatoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparatoTests.swift; sourceTree = "<group>"; };
 		D97C44C11F204F84007E7D04 /* Ext-UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext-UITextField.swift"; sourceTree = "<group>"; };
 		D97C44C51F20506F007E7D04 /* DropDownPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownPickerView.swift; sourceTree = "<group>"; };
 		D99FF8071F1FF783003005F3 /* WeightTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightTypes.swift; sourceTree = "<group>"; };
 		D99FF80D1F200F4C003005F3 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D9ACBE541F27EA4900C0F3FC /* CentsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentsButton.swift; sourceTree = "<group>"; };
-		D9B5E8941F195C6100FCD080 /* ComparatoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComparatoTests.swift; path = ../cents/ComparatoTests.swift; sourceTree = "<group>"; };
 		D9D632731F1579E2009D150B /* cents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D632761F1579E2009D150B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9D6327D1F1579E2009D150B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				D909CC331F1D5D03001F9083 /* SplitSelfTests.swift */,
-				D9B5E8941F195C6100FCD080 /* ComparatoTests.swift */,
+				D96652D41F2FC1A800DC47B3 /* ComparatoTests.swift */,
 				D909CC351F1D5D03001F9083 /* Info.plist */,
 			);
 			path = ProjectTests;
@@ -369,7 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9387FF41F1ECDE200A68AE4 /* SplitSelfTests.swift in Sources */,
-				D919E5A51F1D5EFD00E127AD /* ComparatoTests.swift in Sources */,
+				D96652D51F2FC1A800DC47B3 /* ComparatoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
