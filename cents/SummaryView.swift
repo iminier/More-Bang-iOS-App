@@ -104,7 +104,8 @@ class SummaryView: UIView, Comparato {
     
     func createFrames(view: UIView) {
         topFrame.size = CGSize(width: 280, height: 224)
-        topFrame.pin.topCenter().margin(80, 0, 0, 0)
+        topFrame.center.y = view.center.y - ((topFrame.height / 2) - 20)
+        topFrame.center.x = view.center.x
         botFrame.size = CGSize(width: 280, height: 224)
         botFrame.pin.below(of: topFrame, aligned: .center).margin(20, 0, 0, 0)
     }
