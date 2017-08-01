@@ -12,7 +12,7 @@ class CentsButton: UIButton {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        self.transform = CGAffineTransform(scaleX: 0.99, y: 0.99)
+        self.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
         self.layer.shadowColor = UIColor.clear.cgColor
         
         UIView.animate(withDuration: 0.3, animations: {

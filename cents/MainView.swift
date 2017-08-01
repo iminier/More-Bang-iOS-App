@@ -22,6 +22,8 @@ class MainView: UIView {
     let labelFont = UIFont(name: "Helvetica", size: 20)
     let textFieldFont = UIFont(name: "Helvetica", size: 30)
     let textFieldBackgroudColor: CGColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.0).cgColor
+    let textFieldShadowOpacity: Float = 0.2
+    let globalShadowColor: CGColor = UIColor.gray.cgColor
     
     let keyboardType: UIKeyboardType = UIKeyboardType.decimalPad
     
@@ -50,18 +52,24 @@ class MainView: UIView {
         priceInput.layer.cornerRadius = 5
         priceInput.textAlignment = .center
         priceInput.keyboardType = keyboardType
+        priceInput.layer.shadowColor = globalShadowColor
+        priceInput.layer.shadowOpacity = textFieldShadowOpacity
         priceInput.addTarget(self, action: #selector(priceInputDidChange), for: .editingChanged)
         
         weightTypeInput = UITextField()
         weightTypeInput.font = textFieldFont
         weightTypeInput.layer.backgroundColor = textFieldBackgroudColor
         weightTypeInput.layer.cornerRadius = 5
+        weightTypeInput.layer.shadowColor = globalShadowColor
+        weightTypeInput.layer.shadowOpacity = textFieldShadowOpacity
         weightTypeInput.textAlignment = .center
         
         weightInput = UITextField()
         weightInput.font = textFieldFont
         weightInput.layer.backgroundColor = textFieldBackgroudColor
         weightInput.layer.cornerRadius = 5
+        weightInput.layer.shadowColor = globalShadowColor
+        weightInput.layer.shadowOpacity = textFieldShadowOpacity
         weightInput.textAlignment = .center
         weightInput.keyboardType = keyboardType
         weightInput.addTarget(self, action: #selector(weightInputDidChange), for: .editingChanged)
@@ -87,10 +95,10 @@ class MainView: UIView {
         bottomButton = CentsButton()
         bottomButton.layer.backgroundColor = UIColor(red:0.95, green:0.67, blue:0.67, alpha:1.0).cgColor
         bottomButton.layer.borderColor = UIColor.lightGray.cgColor
-        bottomButton.layer.shadowColor = UIColor.gray.cgColor
+        bottomButton.layer.shadowColor = globalShadowColor
         bottomButton.layer.borderWidth = 2
         bottomButton.layer.cornerRadius = 5
-        bottomButton.layer.shadowOpacity = 0.5
+        bottomButton.layer.shadowOpacity = 0.6
         bottomButton.titleLabel?.textAlignment = .center
     
         self.addSubview(priceInput)
