@@ -100,6 +100,7 @@ class MainView: UIView {
         bottomButton.layer.cornerRadius = 5
         bottomButton.layer.shadowOpacity = 0.6
         bottomButton.titleLabel?.textAlignment = .center
+        
     
         self.addSubview(priceInput)
         self.addSubview(weightTypeInput)
@@ -109,7 +110,7 @@ class MainView: UIView {
         self.addSubview(weightTypeLabel)
         self.addSubview(bottomButton)
     }
-    
+        
     func getWeightTypeFromTextField() -> WeightTypes {
         switch weightTypeInput.text! {
         case "gal.":

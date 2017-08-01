@@ -18,14 +18,19 @@ class MainVC: UIViewController, MainViewDelegate {
         self.title = "More Bang"
         self.view.addSubview(mainView)
         mainView.arrangeView(view: view)
+        self.navigationController?.viewControllers = [self]
+
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.viewDidLoad()
     }
     
     func didTapEnter(mainView: MainView, itemToCompare: ItemToCompare) {
         let someView = SecondVC()
         someView.firstItem = itemToCompare
         
-        // Not working moving forward for now.
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         self.navigationController?.pushViewController(someView, animated: true)
     }

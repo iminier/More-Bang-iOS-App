@@ -21,7 +21,14 @@ class SummaryVC: UIViewController {
         summaryView.summaryItemA = firstScreenItem
         summaryView.summaryItemB = secondScreenItem
         summaryView.arrangeSummaryView(view: view)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(didTapReset))
+
     
+    }
+    
+    func didTapReset() {
+        
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }
