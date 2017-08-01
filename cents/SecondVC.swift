@@ -21,7 +21,6 @@ class SecondVC: UIViewController, SecondViewDelegate {
         loadedView.firstItemToBeCompared = firstItem
         loadedView.arrangeView(view: view)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(resetApp))
     }
     
     func didTapCompareButton(secondView: SecondView, itemA: ItemToCompare, itemB: ItemToCompare) {
@@ -30,10 +29,6 @@ class SecondVC: UIViewController, SecondViewDelegate {
         summaryView.secondScreenItem = itemB
         
         self.navigationController?.pushViewController(summaryView, animated: true)
-    }
-    
-    func resetApp() {
-        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }
