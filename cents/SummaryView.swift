@@ -45,11 +45,13 @@ class SummaryView: UIView, Comparato {
         
         topFrame = UIImageView()
         topFrame.backgroundColor = frameBackgroundColor
-        topFrame.layer.shadowOpacity = 0.7
+        topFrame.layer.shadowColor = UIColor.gray.cgColor
+        topFrame.layer.shadowOpacity = 0.5
         
         botFrame = UIImageView()
         botFrame.backgroundColor = frameBackgroundColor
-        botFrame.layer.shadowOpacity = 0.7
+        botFrame.layer.shadowColor = UIColor.gray.cgColor
+        botFrame.layer.shadowOpacity = 0.5
 
         labelX = UILabel()
         labelY = UILabel()
