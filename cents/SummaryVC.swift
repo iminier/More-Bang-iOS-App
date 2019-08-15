@@ -26,7 +26,7 @@ class SummaryVC: UIViewController {
     
     }
     
-    func didTapReset() {
+    @objc func didTapReset() {
         
         self.navigationController?.popToRootViewController(animated: true)
     }

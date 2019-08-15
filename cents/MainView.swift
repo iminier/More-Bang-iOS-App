@@ -140,10 +140,10 @@ class MainView: UIView {
         }
     }
     
-    func showSecondVC() {
+    @objc func showSecondVC() {
         if priceInput.text != "" && weightInput.text != "" && weightTypeInput.text != "" {
             var priceTextVCOne = priceInput.text
-            priceTextVCOne?.remove(at: (priceTextVCOne?.startIndex)!)
+//            priceTextVCOne?.remove(at: (priceTextVCOne?.startIndex)!)
             
             let weightTypeFromTextField: WeightTypes = getWeightTypeFromTextField()
             let itemToBePassed: ItemToCompare = ItemToCompare(itemNumber: 1,
@@ -157,30 +157,30 @@ class MainView: UIView {
     }
     
     func arrangeTextFields(view: UIView) {
-        priceInput.size.width = 280
-        priceInput.size.height = 100
+        priceInput.bounds.size.width = 280
+        priceInput.bounds.size.height = 100
         priceInput.pin.topCenter().margin(120)
         
-        weightInput.size.width = 170
-        weightInput.size.height = 100
+        weightInput.bounds.size.width = 170
+        weightInput.bounds.size.height = 100
         weightInput.pin.below(of: priceInput, aligned: .left).marginTop(50)
         
-        weightTypeInput.size.width = 100
-        weightTypeInput.size.height = 100
+        weightTypeInput.bounds.size.width = 100
+        weightTypeInput.bounds.size.height = 100
         weightTypeInput.pin.below(of: priceInput, aligned: .right).marginTop(50)
     }
     
     func arrangeLabels() {
-        priceLabel.size.width = 100
-        priceLabel.size.height = 24
+        priceLabel.bounds.size.width = 100
+        priceLabel.bounds.size.height = 24
         priceLabel.pin.above(of: priceInput, aligned: .left).margin(0, 5, 10, 0)
         
-        weightLabel.size.width = 100
-        weightLabel.size.height = 24
+        weightLabel.bounds.size.width = 100
+        weightLabel.bounds.size.height = 24
         weightLabel.pin.above(of: weightInput, aligned: .left).margin(0, 5, 10, 0)
         
-        weightTypeLabel.size.width = 50
-        weightTypeLabel.size.height = 24
+        weightTypeLabel.bounds.size.width = 50
+        weightTypeLabel.bounds.size.height = 24
         weightTypeLabel.pin.above(of: weightTypeInput, aligned: .right).margin(0, 0, 10, 5)
     }
     
@@ -191,7 +191,7 @@ class MainView: UIView {
     
     func arrangeButton() {
         arrangeButtonText()
-        bottomButton.size = CGSize(width: 280, height: 80)
+        bottomButton.bounds.size = CGSize(width: 280, height: 80)
         bottomButton.setTitleShadowColor(UIColor.black, for: .normal)
         bottomButton.setTitleShadowColor(UIColor.clear, for: .highlighted)
         bottomButton.pin.below(of: priceInput, aligned: .center).margin(190)
@@ -224,13 +224,13 @@ class MainView: UIView {
         addDropDownTypes(view: view)
     }
     
-    func priceInputDidChange(_ textField: UITextField) {
+    @objc func priceInputDidChange(_ textField: UITextField) {
         if let amount = textField.text?.currencyInputFormat() {
             priceInput.text = amount
         }
     }
     
-    func weightInputDidChange(_ textField: UITextField) {
+    @objc func weightInputDidChange(_ textField: UITextField) {
         if let weight = textField.text?.weightInputFormat() {
             weightInput.text = weight
         }

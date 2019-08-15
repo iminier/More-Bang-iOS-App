@@ -103,25 +103,25 @@ class SummaryView: UIView, Comparato {
     }
     
     func createFrames(view: UIView) {
-        topFrame.size = CGSize(width: 280, height: 224)
-        topFrame.center.y = view.center.y - ((topFrame.height / 2) - 20)
+        topFrame.bounds.size = CGSize(width: 280, height: 224)
+        topFrame.center.y = view.center.y - ((topFrame.bounds.height / 2) - 20)
         topFrame.center.x = view.center.x
-        botFrame.size = CGSize(width: 280, height: 224)
+        botFrame.bounds.size = CGSize(width: 280, height: 224)
         botFrame.pin.below(of: topFrame, aligned: .center).margin(20, 0, 0, 0)
     }
     
     func setFrameImages() {
         switch summaryOfItems.bbItemNum {
         case 1:
-            labelX.hCenter = botFrame.center.x + ((botFrame.width / 2) - 40)
-            labelX.vCenter = botFrame.center.y - ((botFrame.height / 2) - 40)
-            labelY.hCenter = topFrame.center.x + ((topFrame.width / 2) - 40)
-            labelY.vCenter = topFrame.center.y - ((topFrame.height / 2) - 40)
+            labelX.center.y = botFrame.center.x + ((botFrame.bounds.width / 2) - 40)
+            labelX.center.x = botFrame.center.y - ((botFrame.bounds.height / 2) - 40)
+            labelY.center.y = topFrame.center.x + ((topFrame.bounds.width / 2) - 40)
+            labelY.center.x = topFrame.center.y - ((topFrame.bounds.height / 2) - 40)
         default:
-            labelX.hCenter = topFrame.center.x + ((topFrame.width / 2) - 40)
-            labelX.vCenter = topFrame.center.y - ((topFrame.height / 2) - 40)
-            labelY.hCenter = botFrame.center.x + ((botFrame.width / 2) - 40)
-            labelY.vCenter = botFrame.center.y - ((botFrame.height / 2) - 40)
+            labelX.center.y = topFrame.center.x + ((topFrame.bounds.width / 2) - 40)
+            labelX.center.x = topFrame.center.y - ((topFrame.bounds.height / 2) - 40)
+            labelY.center.y = botFrame.center.x + ((botFrame.bounds.width / 2) - 40)
+            labelY.center.x = botFrame.center.y - ((botFrame.bounds.height / 2) - 40)
         }
     }
 
@@ -154,12 +154,12 @@ class SummaryView: UIView, Comparato {
         
         addTextToLabels()
         
-        topPriceLabel.size = labelSize
-        topWeightLabel.size = labelSize
-        topPricePerLabel.size = labelSize
-        botPriceLabel.size = labelSize
-        botWeightLabel.size = labelSize
-        botPricePerLabel.size = labelSize
+        topPriceLabel.bounds.size = labelSize
+        topWeightLabel.bounds.size = labelSize
+        topPricePerLabel.bounds.size = labelSize
+        botPriceLabel.bounds.size = labelSize
+        botWeightLabel.bounds.size = labelSize
+        botPricePerLabel.bounds.size = labelSize
         
         labelX.text = "\(x)"
         labelX.font = UIFont(name: "Helvetica", size: 40)!
@@ -183,10 +183,10 @@ class SummaryView: UIView, Comparato {
         botPriceLabel.pin.above(of: botWeightLabel, aligned: .center).marginBottom(10)
         botPricePerLabel.pin.below(of: botWeightLabel, aligned: .center).marginTop(10)
         
-        labelX.size.width = 40
-        labelX.size.height = 40
-        labelY.size.width = 40
-        labelY.size.height = 40
+        labelX.bounds.size.width = 40
+        labelX.bounds.size.height = 40
+        labelY.bounds.size.width = 40
+        labelY.bounds.size.height = 40
     }
     
     func arrangeSummaryView(view: UIView) {

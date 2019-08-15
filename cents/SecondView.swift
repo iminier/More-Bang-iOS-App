@@ -31,7 +31,7 @@ class SecondView: MainView {
     override func showSecondVC() {
         if priceInput.text != "" && weightInput.text != "" && weightTypeInput.text != "" {
             var priceTextVCTwo = priceInput.text
-            priceTextVCTwo?.remove(at: (priceTextVCTwo?.startIndex)!)
+//            priceTextVCTwo?.remove(at: (priceTextVCTwo?.startIndex)!)
             let weightTypeFromTextField: WeightTypes = getWeightTypeFromTextField()
             let itemToBePassed: ItemToCompare = ItemToCompare(itemNumber: 2,
                                                               price: (priceTextVCTwo! as NSString).floatValue,
